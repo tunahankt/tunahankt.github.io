@@ -1,47 +1,127 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>CSS-DIV Örnekleri -5-</title>
-<link href="css-5.css" rel="stylesheet" />
-<meta charset="utf-8">
-</head>
-<body>
-<header>
-<h1>Örnek Web Sayfası Tasarımı</h1>
-</header>
-<nav>
-<ul>
-<li><a href="#">Anasayfa</a></li>
-<li><a href="#">Hakkımda</a></li>
-<li><a href="#">İletişim</a></li>
-</ul>
-</nav>
-<article>
-<h1>Başlık1</h1>
-<p>
-Video, size görüşünüzü kanıtlamak için güçlü bir yol sunar. Çevrimiçi Video'ya tıkladığınızda, eklemek istediğiniz videoya ait ekleme kodunu yapıştırabilirsiniz. Belgenize en iyi uyan videoyu çevrimiçi olarak aramak için bir anahtar sözcük de yazabilirsiniz. Word, belgenizin profesyonelce üretilmiş görünmesini sağlamak için birbirini tamamlayan üst bilgi, alt bilgi, kapak sayfası ve metin kutusu tasarımları sağlar. Örneğin, birbiriyle uyumlu bir kapak sayfası, başlık ve kenar çubuğu ekleyebilirsiniz. Ekle'ye tıklayın ve ardından farklı galerilerden eklemek istediğiniz öğeleri seçin.
- 
-</p>
-</article>
-<aside>
-<figure>
-<img src="images/ahmetcansever.jpg" height="100px" width="100px" />
-<figcaption>www.yazilimkodlama.com</figcaption>
-</figure>
-<p>
-Video, size görüşünüzü kanıtlamak için güçlü bir yol sunar. Çevrimiçi Video'ya tıkladığınızda, eklemek istediğiniz videoya ait ekleme kodunu yapıştırabilirsiniz. Belgenize en iyi uyan videoyu çevrimiçi olarak aramak için bir anahtar sözcük de yazabilirsiniz.
-</p>
-</aside>
-<section>
-<h1>Başlık</h1>
-<p>
-Video, size görüşünüzü kanıtlamak için güçlü bir yol sunar. Çevrimiçi Video'ya tıkladığınızda, eklemek istediğiniz videoya ait ekleme kodunu yapıştırabilirsiniz. Belgenize en iyi uyan videoyu çevrimiçi olarak aramak için bir anahtar sözcük de yazabilirsiniz.
-</p>
-</section>
-<footer>
-<hr />
-Tüm hakları saklıdır.
-</footer>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Smooch+Sans"/>
+    <title>Hades</title>
+    <style>
+      body {
+        background-image: url(https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80); /* The image used for background*/
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-position: center; /* Center the image */
+        background-size: cover; /* Resize the background image to cover the entire container */
+        font-family: "Smooch+Sans", sans-serif;
+      }
+
+      .container {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .image-container {
+        text-align: center;
+        width: 100%;
+      }
+
+      .links-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .link {
+        min-width: 50% !important;
+      }
+
+      @media (min-width: 1200px) {
+        .container {
+          max-width: 1140px;
+        }
+      }
+      @media (min-width: 992px) {
+        .container {
+          max-width: 960px;
+        }
+      }
+      @media (min-width: 768px) {
+        .container {
+          max-width: 720px;
+        }
+
+        .link {
+          width: 100%;
+        }
+      }
+      @media (min-width: 576px) {
+        .container {
+          max-width: 540px;
+        }
+      }
+
+      .w3-yellow,
+      .w3-hover-purple:hover,
+      .w3-text-black {
+        color: rgba(255, 204, 217) !important;
+        background-color: rgba(255, 255, 179, 0.3) !important;
+      }
+    </style>
+  </head>
+
+  <body class="w3-white">
+    <div class="container">
+      <div class="image-container">
+        <img
+          src="https://cdn.discordapp.com/attachments/900266597330063410/951794552308637736/WhatsApp_Image_2022-03-11_at_11.17.48.jpeg"
+          class="w3-margin"
+          alt="Person"
+          max-width="100%"
+          height="150px"
+          style="border-radius: 50%"
+        />
+
+        <!-- Content. Add bio. -->
+        <div class="w3-text-cyan">
+          <p class="w3-large"><strong>Socials</strong></p>
+        </div>
+
+        <!-- Links section 1. Replace the # inside of the "" with your links. -->
+        <div class="links-container">
+          <a href="https://www.instagram.com/benfbihades" class="w3-button w3-hover-red w3-large w3-round-xlarge w3-yellow link" target="_blank">Instagram</a>
+          <a href="https://discord.com/users/714772292726685737" class="w3-button w3-hover-red w3-large w3-round-xlarge w3-yellow link" target="_blank">Discord</a>
+          <a href="https://github.com/tunahankt" class="w3-button w3-hover-red w3-large w3-round-xlarge w3-yellow link" target="_blank">Github</a>
+          <a href="https://www.linkedin.com/in/tunahan-küçükturgut-65540b234/" class="w3-button w3-hover-red w3-large w3-round-xlarge w3-yellow link" target="_blank">Linkedin</a>
+          <a href="https://open.spotify.com/user/bgk3g3euxme32okcl7n89pfji?si=e89e9b619b1146c3" class="w3-button w3-hover-red w3-large w3-round-xlarge w3-yellow link" target="_blank">Spotify</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog entry. Change the text and link to your most recent post. -->
+    <div  class="w3-content w3-padding-32 w3-center" style="padding-right: 10px; padding-left: 10px; max-width: 600px">
+      <h3 class="w3-text-white">Hades.</h3>
+      <h5 class="w3-text-white">Başlangıç 11.03.2022</h5>
+      </p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          </p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p>
+              </span>
+            </span>
+          </p>
+        </div>
+      </div>
+      <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
+      <footer class="w3-container w3-center w3-padding-48 w3-margin-top">
+
+      </footer>
+    </div>
+  </body>
 </html>
- 
