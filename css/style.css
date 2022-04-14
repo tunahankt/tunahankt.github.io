@@ -1,7 +1,7 @@
 *{
 	padding: 0;
 	margin: 0;
-	font-family: 'Josefin Sans', sans-serif;
+	font-family: 'Nunito', sans-serif;
 	box-sizing: border-box;
 }
 .genel{
@@ -135,7 +135,7 @@ footer{
 	justify-content: center;
 }
 footer p:nth-child(1){
-	font-size: 70px;
+	font-size: 80px;
 	color: white;
 	margin-bottom: 125px;
 	font-weight: bold;
