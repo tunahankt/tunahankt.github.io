@@ -31,7 +31,7 @@ span{
 nav ul li{
 	list-style-type: none;
 	display: inline-block;
-	padding: 10px  25px;
+	padding: 10px  125px;
 }
 nav ul li a{
 	color: white;
@@ -40,7 +40,7 @@ nav ul li a{
 	text-transform: capitalize;
 }
 nav ul li a:hover{
-	color: #f9004d;
+	color: #0091f9;
 	transition: .4s;
 }
 .indir{
@@ -56,7 +56,7 @@ nav ul li a:hover{
 .indir:hover{
 	transform: scale(2.2);
 }
-.giriş{
+.anasayfa{
 	position: absolute;
 	top: 50%;
 	left:8%;
@@ -70,7 +70,7 @@ h1{
 h3{
 	color: rgb(255, 0, 0);
 	font-size: 25px;
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 }
 h4{
 	color: rgb(255, 0, 0);
@@ -143,7 +143,7 @@ h5{
 footer{
 	position: relative;
 	width: 100%;
-	height: 400px;
+	height: 750px;
 	background: #101010;
 	display: flex;
 	flex-direction: column;
@@ -151,41 +151,36 @@ footer{
 	justify-content: center;
 }
 footer p:nth-child(1){
-	font-size: 30px;
+	font-size: 70px;
 	color: white;
-	margin-bottom: 20px;
+	margin-bottom: 150px;
 	font-weight: bold;
 }
 footer p:nth-child(2){
 	color: rgb(255, 0, 0);
-	font-size: 17px;
+	font-size: 30px;
 	width: 500px;
+	margin-bottom: 175px;
 	text-align: center;
-	line-height: 26px;
+	line-height: 46px;
 }
 .sosyal-medya{
 	display: flex;
 }
 .sosyal-medya a{
-	width: 45px;
-	height: 45px;
+	width: 75px;
+	height: 75px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background:  #0091f9;
 	border-radius: 50%;
-	margin: 22px 10px;
+	margin: 10px 20px;
 	color: rgb(0, 0, 0);
 	text-decoration: none;
-	font-size: 20px;
+	font-size: 45px;
 }
 .sosyal-medya a:hover{
 	transform: scale(1.5);
 	transition: .3s;
 }
-/* .end{
-	position: absolute;
-	color:#0091f9;
-	bottom: 35px;
-	font-size: 14px; 
-} */
