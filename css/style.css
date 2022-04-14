@@ -137,14 +137,14 @@ footer{
 footer p:nth-child(1){
 	font-size: 70px;
 	color: white;
-	margin-bottom: 150px;
+	margin-bottom: 125px;
 	font-weight: bold;
 }
 footer p:nth-child(2){
 	color: rgb(255, 0, 0);
 	font-size: 30px;
 	width: 500px;
-	margin-bottom: 175px;
+	margin-bottom: 135px;
 	text-align: center;
 	line-height: 46px;
 }
