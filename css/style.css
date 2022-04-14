@@ -20,9 +20,13 @@ nav {
 	 padding: 12px 8%;
 	 overflow: hidden;
 	 position: fixed;
+	 font-size: 16pt;
 	 top: 0;
 	 z-index: 100;
  } 
+ a {
+	text-decoration: none;
+  }
 .logo{
 	color: white;
 	font-size: 35px;
@@ -35,7 +39,7 @@ span{
 nav ul li{
 	list-style-type: none;
 	display: inline-block;
-	padding: 7px  125px;
+	padding: 7px  45px;
 }
 nav ul li a{
 	color: white;
@@ -68,7 +72,14 @@ h4{
 	letter-spacing: 2px;
 	font-size: 20px;
 }
-
+.katman{
+	width: 1130px;
+	max-width: 95%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
 .hakkımda{
 	width: 100%;
 	padding: 100px 0px;
@@ -80,14 +91,6 @@ h4{
 }
 .hakkımda-text{
 	width: 550px;
-}
-.ana{
-	width: 1130px;
-	max-width: 95%;
-	margin: 0 auto;
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
 }
 .hakkımda-text h2{
 	color: white;
@@ -109,7 +112,64 @@ h4{
 	font-size: 18px;
 	margin-bottom: 45px;
 }
+.yeteneklerim{
+	width: 100%;
+	padding: 100px 0px;
+	background-color: #000000;
+}
+.yeteneklerim img{
+	height: auto;
+	width: 430px;
+	position: relative;
+	left: 550px;	
+}
+.yeteneklerim-text{
+	width: 550px;
+}
+.yeteneklerim-text h1{
+	color: white;
+	font-size: 75px;
+	text-transform: capitalize;
+	margin-bottom: 20px;
+	position: relative;
+	right: 550px;
+}
 
+.yeteneklerim-text h2{
+	color: white;
+	letter-spacing: 2px;
+	font-size: 22px;
+	margin-bottom: 15px;
+	text-transform: capitalize;
+	position: relative;
+	right: 550px;
+}
+
+.egitim{
+	width: 100%;
+	padding: 100px 0px;
+	background-color: #191919;
+}
+.egitim img{
+	height: auto;
+	width: 430px;
+}
+.egitim-text{
+	width: 550px;
+}
+.egitim-text h1{
+	color: white;
+	font-size: 75px;
+	text-transform: capitalize;
+	margin-bottom: 20px;
+}
+.egitim-text h2{
+	color: #0091f9;
+	letter-spacing: 2px;
+	font-size: 22px;
+	margin-bottom: 25px;
+	text-transform: capitalize;
+}
 .title h2{
 	color: white;
 	font-size: 75px;
