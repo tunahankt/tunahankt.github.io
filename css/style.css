@@ -106,7 +106,7 @@ h4{
 	text-transform: capitalize;
 }
 .hakkımda-text p{
-	color: #fcfc;
+	color: white;
 	letter-spacing: 1px;
 	line-height: 28px;
 	font-size: 18px;
@@ -125,6 +125,8 @@ h4{
 }
 .yeteneklerim-text{
 	width: 550px;
+	position: relative;
+	left: 10%;
 }
 .yeteneklerim-text h1{
 	color: white;
@@ -132,9 +134,13 @@ h4{
 	text-transform: capitalize;
 	margin-bottom: 20px;
 	position: relative;
-	right: 550px;
+	right: 700px;
 }
-
+.yeteneklerim-text label {
+	float: right;
+	position: relative;
+	left: -100%;
+}
 .yeteneklerim-text h2{
 	color: white;
 	letter-spacing: 2px;
@@ -163,12 +169,28 @@ h4{
 	text-transform: capitalize;
 	margin-bottom: 20px;
 }
+
 .egitim-text h2{
 	color: #0091f9;
 	letter-spacing: 2px;
 	font-size: 22px;
 	margin-bottom: 25px;
 	text-transform: capitalize;
+	text-decoration: none;
+}
+.egitim-text h2:hover {
+	color: blue;
+}
+.egitim-text h3:hover {
+	color: blue;
+}
+.egitim-text h3{
+	color: #0091f9;
+	letter-spacing: 2px;
+	font-size: 22px;
+	margin-bottom: 25px;
+	text-transform: capitalize;
+	text-decoration: none;
 }
 .title h2{
 	color: white;
