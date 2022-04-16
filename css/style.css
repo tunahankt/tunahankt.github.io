@@ -4,6 +4,10 @@
 	font-family: 'Nunito', sans-serif;
 	box-sizing: border-box;
 }
+
+body {
+	overflow-x: hidden;
+}
 .genel{
 	height: 100vh;
 	width: 100%;
@@ -11,6 +15,7 @@
 	background-size: cover;
 	background-position: center;
 }
+
 nav {
 	display: flex;
 	 width: 100%;
@@ -24,80 +29,102 @@ nav {
 	 top: 0;
 	 z-index: 100;
  } 
+
  a {
 	text-decoration: none;
   }
+
 .logo{
 	color: white;
 	font-size: 35px;
 	letter-spacing: 1px;
 	cursor: pointer;
 }
+
 span{
 	color: #0091f9;
 }
+
 nav ul li{
 	list-style-type: none;
 	display: inline-block;
 	padding: 7px  45px;
 }
+
 nav ul li a{
 	color: white;
 	text-decoration: none;
 	font-weight: bold;
 	text-transform: capitalize;
 }
+
 nav ul li a:hover{
 	color: #0091f9;
 	transition: .4s;
 }
+
 .anasayfa{
 	position: absolute;
 	top: 50%;
 	left:8%;
 	transform: translateY(-50%);
 }
-h1{
+
+.anasayfa h1{
 	color: white;
 	margin: 20px 0px 20px;
 	font-size: 70px;
 }
-h3{
+
+.anasayfa h3{
 	color: rgb(255, 0, 0);
 	font-size: 25px;
 	margin-bottom: 20px;
 }
-h4{
+
+.anasayfa h4{
 	color: rgb(255, 0, 0);
 	letter-spacing: 2px;
 	font-size: 20px;
 }
+
 .katman{
-	width: 1130px;
+	width: 100vw;
+	height: 100vh;
 	max-width: 95%;
 	margin: 0 auto;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
 }
+
 .hakkımda{
 	width: 100%;
 	padding: 100px 0px;
 	background-color: #191919;
 }
+
 .hakkımda img{
 	height: auto;
-	width: 430px;
+	width: 400px;
+	position: relative;
+	bottom: 10%;
 }
+
 .hakkımda-text{
 	width: 550px;
+	position: relative;
+	right: 5%;
+	bottom: 8%;
 }
+
 .hakkımda-text h2{
 	color: white;
 	font-size: 75px;
 	text-transform: capitalize;
 	margin-bottom: 20px;
 }
+
 .hakkımda-text h5{
 	color: white;
 	letter-spacing: 2px;
@@ -105,42 +132,53 @@ h4{
 	margin-bottom: 25px;
 	text-transform: capitalize;
 }
-.hakkımda-text p{
+
+.hakkımda-text h3{
 	color: white;
 	letter-spacing: 1px;
 	line-height: 28px;
 	font-size: 18px;
 	margin-bottom: 45px;
 }
+
 .yeteneklerim{
 	width: 100%;
 	padding: 100px 0px;
 	background-color: #000000;
+	height: 100vh;
 }
+
 .yeteneklerim img{
 	height: auto;
-	width: 430px;
+	width: 500px;
 	position: relative;
-	left: 550px;	
+	left: 50%;
+	bottom: 10%;	
 }
+
 .yeteneklerim-text{
 	width: 550px;
 	position: relative;
 	left: 10%;
+	bottom: 15%;
 }
+
 .yeteneklerim-text h1{
-	color: white;
-	font-size: 75px;
-	text-transform: capitalize;
-	margin-bottom: 20px;
+	width: 550px;
 	position: relative;
-	right: 700px;
+	right: 140%;
+	bottom: 8%;
+	color: white;
+	margin: 20px 0px 20px;
+	font-size: 70px;
 }
+
 .yeteneklerim-text label {
 	float: right;
 	position: relative;
 	left: -100%;
 }
+
 .yeteneklerim-text h2{
 	color: white;
 	letter-spacing: 2px;
@@ -148,21 +186,85 @@ h4{
 	margin-bottom: 15px;
 	text-transform: capitalize;
 	position: relative;
-	right: 550px;
+	right: 114%;
 }
+
+.projelerim{
+	width: 100%;
+	padding: 100px 0px;
+	background-color: #191919;
+	height: 100vh;
+}
+
+.projelerim img{
+	height: auto;
+	width: 330px;
+	position: relative;
+	top: -3em;
+
+}
+
+.projelerim-text{
+	width: 550px;
+	position: relative;
+	right: 5%;
+	bottom: 8%;
+}
+
+.projelerim-text h2{
+	width: 550px;
+	position: relative;
+	color: white;
+	font-size: 70px;
+	margin-bottom: 5%;
+}
+.projelerim-text h3{
+	color: white;
+	letter-spacing: 2px;
+	font-size: 22px;
+	margin-bottom: 25px;
+	text-transform: capitalize;
+}
+
+
+button {
+	background-color: Transparent;
+	border: solid #0091f9 10px;
+	color: #0091f9;
+	padding: 100px 170px;
+	font-size: 46px;
+	border-radius: 25px;
+	cursor: pointer;
+	transition: 0.2s;
+  }
+  
+  button:hover {
+	background-color: #0091f9;
+	color: #ffffff;
+  }
 
 .egitim{
 	width: 100%;
 	padding: 100px 0px;
-	background-color: #191919;
+	background-color: #000000;
+	height: 100vh;
 }
+
 .egitim img{
 	height: auto;
-	width: 430px;
+	width: 500px;
+	position: relative;
+	left: 50%;
+	bottom: 10%;	
 }
+
 .egitim-text{
 	width: 550px;
+	position: relative;
+	right: 44%;
+	bottom: 8%;
 }
+
 .egitim-text h1{
 	color: white;
 	font-size: 75px;
@@ -178,12 +280,11 @@ h4{
 	text-transform: capitalize;
 	text-decoration: none;
 }
-.egitim-text h2:hover {
+
+.egitim-text .header-hover:hover {
 	color: blue;
 }
-.egitim-text h3:hover {
-	color: blue;
-}
+
 .egitim-text h3{
 	color: #0091f9;
 	letter-spacing: 2px;
@@ -192,36 +293,24 @@ h4{
 	text-transform: capitalize;
 	text-decoration: none;
 }
-.title h2{
-	color: white;
-	font-size: 75px;
-	width: 1130px;
-	margin: 30px auto;
-	text-align: center;
-}
-
-
-h5{
-	color: white;
-	font-size: 23px;
-	margin-bottom: 15px;
-}
 
 footer{
 	width: 100%;
 	height: 750px;
-	background: #101010;
+	background: #191919;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 }
+
 footer p:nth-child(1){
 	font-size: 80px;
 	color: white;
 	margin-bottom: 125px;
 	font-weight: bold;
 }
+
 footer p:nth-child(2){
 	color: rgb(255, 0, 0);
 	font-size: 30px;
@@ -230,9 +319,11 @@ footer p:nth-child(2){
 	text-align: center;
 	line-height: 46px;
 }
+
 .sosyal-medya{
 	display: flex;
 }
+
 .sosyal-medya a{
 	width: 75px;
 	height: 75px;
@@ -246,10 +337,12 @@ footer p:nth-child(2){
 	text-decoration: none;
 	font-size: 45px;
 }
+
 .sosyal-medya a:hover{
 	transform: scale(1.5);
 	transition: .3s;
 }
+
 ::-webkit-scrollbar {
 	width: 8px;
   }
@@ -266,7 +359,7 @@ footer p:nth-child(2){
   ::-webkit-scrollbar-thumb:hover {
 	background: #555;
   }
+
   html {
 	scroll-behavior: smooth;
 	}
-	
