@@ -514,6 +514,9 @@
 		}
 
 @media screen and (max-width: 600px) {
+	html{
+		overflow-x: none;
+	}
 	.nav-menu{
 		width: 100%;
 		max-height: 0;
@@ -533,7 +536,10 @@
 	#toggler:checked ~ .nav-menu{
 		max-height: 100%;
 		}
+		.anasayfa h1{
+			font-size: 21pt;
 
+		}
 		.hakkımda{
 			height: 130vh;
 		}
@@ -556,23 +562,23 @@
 		}
 		.yeteneklerim-text{
 			position: relative;
-			right: 160%;
+			left: -60%;
 			top: 15%;
 			
 		}
 		.yeteneklerim-text h1{
-			left: -80%;
+			left: 12%;
 			width: 80%;
 			font-size: 40pt;
 			text-align: center;
 		}
 		.yetenek-kutu progress{
 			position: relative;
-			left: -40%;
+			left: 47%;
 		}
 		.yetenek-kutu label{
 			position: relative;
-			left: -144%;
+			left: -55%;
 			color: white;
 			top: 80%;
 		}
