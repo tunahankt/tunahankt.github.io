@@ -5,16 +5,20 @@
 	<title>Tunahan</title>
 	<link rel="icon" href="img/umut.ico"/>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
 </head>
 <body>	
 	<div class="genel">
 		<nav>
 			<a href="#"> <h2 class="logo">Tuna<span>han</span></h2> </a>
+			<input type="checkbox" id="toggler">
+			<label for="toggler"><i class="ri-menu-line"></i></label>
+			<div class="nav-menu">
+
 				<ul>
 					<li><a href="#hakkımda">Hakkımda</a></li>
 					<li><a href="#yeteneklerim">Yeteneklerim</a></li>
@@ -25,8 +29,9 @@
 					
 					
 				</ul>
-		</nav>
-
+			</div>
+			</nav>
+		
 		<div class="anasayfa" id="anasayfa">
 			<h4>Merhaba, sayfama hoş geldin!</h4>
 			<h1><span>Ben </span>Tunahan <span>Küçükturgut</span></h1>
@@ -36,7 +41,7 @@
 
 	<section class="hakkımda" id="hakkımda">
 		<div class="katman">
-			<img src="img/ben.png">
+			<img class="hakkımda-resim" src="img/ben.png">
 			<div class="hakkımda-text">
 				<h2>Hakkımda</h2>
 				<h5>Şu anlık sadece <span>Öğrenciyim</span></h5>
@@ -49,7 +54,7 @@
 			<img src="img/yetenek.png">
 			<div class="yeteneklerim-text">
 				<h1>Yeteneklerim</h1>
-				<h2>
+				<div class="yetenek-kutu">
 				<label for="yetenek-bar">Photoshop:</label>
 				<progress id="yetenek-bar" value="47" max="100"></progress>
 				<br>
@@ -64,7 +69,7 @@
 				<br>
 				<label for="yetenek-bar">Python:</label>
 				<progress id="yetenek-bar" value="18" max="100"></progress>	
-			</h2>
+				</div>
 			</div>
 		</div>
 		
@@ -108,6 +113,24 @@
 			<div class="banaulas-text">
 			</div>
 		</div>
+		<div class="iletisimegec">  
+			<form id="iletisim" action="" method="post">
+			  <h1>İletişim</h1>
+			  <h2>İletişime geçmek için aşağıda bulunan formu doldurun!</h2>
+			  <fieldset>
+				<input placeholder="Adınız" type="isim" tabindex="1" required autofocus>
+			  </fieldset>
+			  <fieldset>
+				<input placeholder="Email Adresiniz" type="email" tabindex="2" required>
+			  </fieldset>
+			  <fieldset>
+				<textarea placeholder="Mesajınız.." tabindex="5" required></textarea>
+			  </fieldset>
+			  <fieldset>
+				<button name="gonder" type="Gonder" id="contact-gonder" data-submit="...Sending">Gönder</button>
+			  </fieldset>
+			</form>
+		  </div>
 	</section>
 </body>
 </html>
