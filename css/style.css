@@ -514,8 +514,8 @@
 		}
 
 @media screen and (max-width: 600px) {
-	html{
-		overflow-x: none;
+	.wrapper {
+		overflow-x: hidden;
 	}
 	.nav-menu{
 		width: 100%;
