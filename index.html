@@ -14,12 +14,9 @@
 <body>	
 	<div class="wrapper">
 	<div class="genel">
-		<nav>
+		<nav id="nav-normal">
 			<a href="#"> <h2 class="logo">Tuna<span>han</span></h2> </a>
-			<input type="checkbox" id="toggler">
-			<label for="toggler"><i class="ri-menu-line"></i></label>
 			<div class="nav-menu">
-
 				<ul>
 					<li><a href="#hakkımda">Hakkımda</a></li>
 					<li><a href="#yeteneklerim">Yeteneklerim</a></li>
@@ -27,17 +24,37 @@
 					<li><a href="#egitim">Eğitim</a></li>
 					<li><a href="#sosyal-medya">Sosyal Medya</a></li>
 					<li><a href="#bana-ulas">İletişim</a></li>
-					
-					
 				</ul>
 			</div>
-			</nav>
+		</nav>
 		
 		<div class="anasayfa" id="anasayfa">
 			<h4>Merhaba, sayfama hoş geldin!</h4>
 			<h1><span>Ben </span>Tunahan <span>Küçükturgut</span></h1>
 			<h3>Öğrenciyim.</h3>
 		</div>
+		<div class="nav-container">
+			<div class="nav-content">
+			  <nav role="navigation">
+				  <p class="nav-text">Tunahan</p>
+				<div id="menuToggle">
+				  <input type="checkbox" />
+					<span></span>
+					<span></span>
+					<span></span>
+				<ul id="menu">
+				  <li><a href="#hakkımda">Hakkımda</a></li>
+				  <li><a href="#yetenekleim">Yeteneklerim</a></li>
+				  <li><a href="#projelerim">Projelerim</a></li>
+				  <li><a href="#egitim">Eğitim</a></li>
+				  <li><a href="#sosyal-medya">Sosyal Medya</a></li>
+				  <li><a href="#bana-ulas">İletişim</a></li>
+				</ul>
+			   </div>
+			  </nav>
+			</div>
+		</div>
+      
 	</div>
 
 	<section class="hakkımda" id="hakkımda">
@@ -63,7 +80,7 @@
 				<progress id="yetenek-bar" value="13" max="100"></progress>
 				<br>
 				<label for="yetenek-bar">HTML:</label>
-				<progress id="file" value="25" max="100"></progress>
+				<progress id="yetenek-bar" value="25" max="100"></progress>
 				<br>
 				<label for="yetenek-bar">CSS:</label>
 				<progress id="yetenek-bar" value="20" max="100"></progress>
