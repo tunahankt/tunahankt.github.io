@@ -1,155 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr" >
 <head>
-	
-	<title>Tunahan</title>
-	<link rel="icon" href="img/umut.ico"/>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta charset="UTF-8">
+  <title>Whatsapp Chat</title>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato'><link rel="stylesheet" href="./style.css">
 
 </head>
-<body>	
-	<div class="wrapper">
-	<div class="genel">
-		<nav id="nav-normal">
-			<a href="#"> <h2 class="logo">Tuna<span>han</span></h2> </a>
-			<div class="nav-menu">
-				<ul>
-					<li><a href="#hakkımda">Hakkımda</a></li>
-					<li><a href="#yeteneklerim">Yeteneklerim</a></li>
-					<li><a href="#projelerim">Projelerim</a></li>
-					<li><a href="#egitim">Eğitim</a></li>
-					<li><a href="#sosyal-medya">Sosyal Medya</a></li>
-					<li><a href="#bana-ulas">İletişim</a></li>
-				</ul>
-			</div>
-		</nav>
-		
-		<div class="anasayfa" id="anasayfa">
-			<h4>Merhaba, sayfama hoş geldin!</h4>
-			<h1><span>Ben </span>Tunahan <span>Küçükturgut</span></h1>
-			<h3>Öğrenciyim.</h3>
-		</div>
-		<div class="nav-container">
-			<div class="nav-content">
-			  <nav role="navigation">
-				  <p class="nav-text">Tunahan</p>
-				<div id="menuToggle">
-				  <input type="checkbox" />
-					<span></span>
-					<span></span>
-					<span></span>
-				<ul id="menu">
-				  <li><a href="#hakkımda">Hakkımda</a></li>
-				  <li><a href="#yetenekleim">Yeteneklerim</a></li>
-				  <li><a href="#projelerim">Projelerim</a></li>
-				  <li><a href="#egitim">Eğitim</a></li>
-				  <li><a href="#sosyal-medya">Sosyal Medya</a></li>
-				  <li><a href="#bana-ulas">İletişim</a></li>
-				</ul>
-			   </div>
-			  </nav>
-			</div>
-		</div>
-      
-	</div>
+<body>
+<!-- partial:index.partial.html -->
+<div id='whatsapp-chat' class='hide'>
+  <div class='header-chat'>
+    <div class='head-home'>
+      <div class='info-avatar'><img src='https://media.discordapp.net/attachments/956989428105113640/1110154279559364698/ak1.jpg?width=375&height=375' /></div>
+      <p><span class="whatsapp-name">Aktıp</span><br><small>Bir saat içinde dönüş yapılır</small></p>
 
-	<section class="hakkımda" id="hakkımda">
-		<div class="katman">
-			<img class="hakkımda-resim" src="img/ben.png">
-			<div class="hakkımda-text">
-				<h2>Hakkımda</h2>
-				<h5>Şu anlık sadece <span>Öğrenciyim</span></h5>
-				<h3>Merhaba, ben Tunahan. Eskişehir Osmangazi Üniversitesi SMYO'da Bilgisayar Programcılığı bölümü öğrencisiyim. Amacım fotoğrafçılık, web tasarım ve veri tabanı üzerine yoğunlaşmak ve bu yönde uzmanlaşmak.</h3>
-			</div>
-		</div>
-	</section>	
-	<section class="yeteneklerim" id="yeteneklerim">
-		<div class="katman">
-			<img src="img/yetenek.png">
-			<div class="yeteneklerim-text">
-				<h1>Yeteneklerim</h1>
-				<div class="yetenek-kutu">
-				<label for="yetenek-bar">Photoshop:</label>
-				<progress id="yetenek-bar" value="47" max="100"></progress>
-				<br>
-				<label for="yetenek-bar">Javascript:</label>
-				<progress id="yetenek-bar" value="13" max="100"></progress>
-				<br>
-				<label for="yetenek-bar">HTML:</label>
-				<progress id="yetenek-bar" value="25" max="100"></progress>
-				<br>
-				<label for="yetenek-bar">CSS:</label>
-				<progress id="yetenek-bar" value="20" max="100"></progress>
-				<br>
-				<label for="yetenek-bar">Python:</label>
-				<progress id="yetenek-bar" value="18" max="100"></progress>	
-				</div>
-			</div>
-		</div>
-		
-	</section>	
+    </div>
+    <div class='get-new hide'>
+      <div id='get-label'></div>
+      <div id='get-nama'></div>
+    </div>
+  </div>
+  <div class='home-chat'>
 
-	<section class="projelerim" id="projelerim">
-		<div class="katman">
-			<img src="img/projelerim.png">
-			<div class="projelerim-text">
-				<h2>Projelerim</h2>
-				<h3>Projelerime ulaşmak için aşağıdaki <span>GitHub </span>bağlantısına tıklayabilirsiniz.</h3>
-				<a href="https://github.com/tunahankt?tab=repositories" target="_blank"> <button>GitHub</button></a>	
-			</div>
-		</div>
-	</section>
+  </div>
+  <div class='start-chat'>
+    <div pattern="https://elfsight.com/assets/chats/patterns/whatsapp.png" class="WhatsappChat__Component-sc-1wqac52-0 whatsapp-chat-body">
+      <div class="WhatsappChat__MessageContainer-sc-1wqac52-1 dAbFpq">
+        <div style="opacity: 0;" class="WhatsappDots__Component-pks5bf-0 eJJEeC">
+          <div class="WhatsappDots__ComponentInner-pks5bf-1 hFENyl">
+            <div class="WhatsappDots__Dot-pks5bf-2 WhatsappDots__DotOne-pks5bf-3 ixsrax"></div>
+            <div class="WhatsappDots__Dot-pks5bf-2 WhatsappDots__DotTwo-pks5bf-4 dRvxoz"></div>
+            <div class="WhatsappDots__Dot-pks5bf-2 WhatsappDots__DotThree-pks5bf-5 kXBtNt"></div>
+          </div>
+        </div>
+        <div style="opacity: 1;" class="WhatsappChat__Message-sc-1wqac52-4 kAZgZq">
+          <div class="WhatsappChat__Author-sc-1wqac52-3 bMIBDo">Aktıp</div>
+          <div class="WhatsappChat__Text-sc-1wqac52-2 iSpIQi">Merhaba 👋<br><br>Nasıl yardımcı olabilirim?</div>
+        </div>
+      </div>
+    </div>
 
-	<section class="egitim" id="egitim">
-		<div class="katman">
-			<img src="img/egitim.png"> 
-			<div class="egitim-text">
-				<h1>Eğitim</h1>
-				<a href="https://bartincumhuriyetoo.meb.k12.tr"><h2 class="header-hover">Cumhuriyet İlk ve Ortaokulu (2008-2016) </h2> </a>
-				<a href="https://bartinlisesi.meb.k12.tr/74/01/964341/okulumuz_hakkinda.html"><h2  class="header-hover">Bartın Anadolu Lisesi (2016-2020) </h2> </a>
-				<a href="https://www.ogu.edu.tr"><h2  class="header-hover">Eskişehir Osmangazi Üniversitesi (2021-)</h2> </a>
-			</div>
-		</div>
-	</section>
-	<section class="sosyal-medya" id="sosyal-medya">
-		<h1>Sosyal Medya</h1>
-		<h2>Aşağıdaki sosyal medya hesaplarımdan bana ulaşabilirsiniz</h2>
-		<div class="sosyal-medya-icons">
-			<a href="https://discord.com/users/714772292726685737"target="_blank"><i class="fab fa-discord"></i></a>
-			<a href="https://www.instagram.com/tunahankt"target="_blank"><i class="fab fa-instagram"></i></a>
-			<a href="https://www.github.com/tunahankt"target="_blank"><i class="fab fa-github"></i></a>
-			<a href="https://www.linkedin.com/in/tunahan-küçükturgut-65540b234/"target="_blank"><i class="fab fa-linkedin"></i></a>
-		</div>
-	</section>	
-	<section class="bana-ulas" id="bana-ulas">
-		<div class="katman">
-			<img src="img/banaulas.png">
-			<div class="banaulas-text">
-			</div>
-		</div>
-		<div class="iletisimegec">  
-			<form id="iletisim" action="" method="post">
-			  <h1>İletişim</h1>
-			  <h2>İletişime geçmek için aşağıda bulunan formu doldurun!</h2>
-			  <fieldset>
-				<input placeholder="Adınız" type="isim" tabindex="1" required>
-			  </fieldset>
-			  <fieldset>
-				<input placeholder="Email Adresiniz" type="email" tabindex="2" required>
-			  </fieldset>
-			  <fieldset>
-				<textarea placeholder="Mesajınız.." tabindex="5" required></textarea>
-			  </fieldset>
-			  <fieldset>
-				<button name="gonder" type="Gonder" id="contact-gonder" data-submit="...Sending">Gönder</button>
-			  </fieldset>
-			</form>
-		  </div>
-	</section>
+    <div class='blanter-msg'>
+      <textarea id='chat-input' placeholder='Mesajınızı yazın.' maxlength='120' row='1'></textarea>
+      <a href='javascript:void;' id='send-it'><svg viewBox="0 0 448 448"><path d="M.213 32L0 181.333 320 224 0 266.667.213 416 448 224z"/></svg></a>
+
+    </div>
+  </div>
+  <div id='get-number'></div><a class='close-chat' href='javascript:void'>×</a>
 </div>
+<a class='blantershow-chat' href='javascript:void' title='Mesaj Gönder'><svg width="20" viewBox="0 0 24 24"><defs/><path fill="#eceff1" d="M20.5 3.4A12.1 12.1 0 0012 0 12 12 0 001.7 17.8L0 24l6.3-1.7c2.8 1.5 5 1.4 5.8 1.5a12 12 0 008.4-20.3z"/><path fill="#4caf50" d="M12 21.8c-3.1 0-5.2-1.6-5.4-1.6l-3.7 1 1-3.7-.3-.4A9.9 9.9 0 012.1 12a10 10 0 0117-7 9.9 9.9 0 01-7 16.9z"/><path fill="#fafafa" d="M17.5 14.3c-.3 0-1.8-.8-2-.9-.7-.2-.5 0-1.7 1.3-.1.2-.3.2-.6.1s-1.3-.5-2.4-1.5a9 9 0 01-1.7-2c-.3-.6.4-.6 1-1.7l-.1-.5-1-2.2c-.2-.6-.4-.5-.6-.5-.6 0-1 0-1.4.3-1.6 1.8-1.2 3.6.2 5.6 2.7 3.5 4.2 4.2 6.8 5 .7.3 1.4.3 1.9.2.6 0 1.7-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></svg> Bize ulaşın</a>
+<!-- partial -->
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script><script  src="./script.js"></script>
+
 </body>
 </html>
