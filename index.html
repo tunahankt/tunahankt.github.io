@@ -1,57 +1,222 @@
 <!DOCTYPE html>
-<html lang="tr" >
-<head>
-  <meta charset="UTF-8">
-  <title>Whatsapp Chat</title>
-  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css'>
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato'><link rel="stylesheet" href="./style.css">
+<html>
+  <head>
+    <title>Hades</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+    .w3-row-padding img {margin-bottom: 12px}
+    /* Set the width of the sidebar to 120px */
+    .w3-sidebar {width: 120px;background: #222;}
+    /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+    #main {margin-left: 120px}
+    /* Remove margins from "page content" on small screens */
+    @media only screen and (max-width: 600px) {#main {margin-left: 0}}
+    </style>
+  </head>
+<body class="w3-black">
 
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<div id='whatsapp-chat' class='hide'>
-  <div class='header-chat'>
-    <div class='head-home'>
-      <div class='info-avatar'><img src='https://media.discordapp.net/attachments/956989428105113640/1110154279559364698/ak1.jpg?width=375&height=375' /></div>
-      <p><span class="whatsapp-name">Aktıp</span><br><small>Bir saat içinde dönüş yapılır</small></p>
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <img src="https://cdn.discordapp.com/attachments/900266597330063410/951794552308637736/WhatsApp_Image_2022-03-11_at_11.17.48.jpeg" style="width:100%">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>GENEL</p>
+  </a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>HAKKIMDA</p>
+  </a>
+  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>GALERİ</p>
+  </a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>İLETİŞİME GEÇ</p>
+  </a>
+</nav>
 
-    </div>
-    <div class='get-new hide'>
-      <div id='get-label'></div>
-      <div id='get-nama'></div>
-    </div>
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
   </div>
-  <div class='home-chat'>
+</div>
 
-  </div>
-  <div class='start-chat'>
-    <div pattern="https://elfsight.com/assets/chats/patterns/whatsapp.png" class="WhatsappChat__Component-sc-1wqac52-0 whatsapp-chat-body">
-      <div class="WhatsappChat__MessageContainer-sc-1wqac52-1 dAbFpq">
-        <div style="opacity: 0;" class="WhatsappDots__Component-pks5bf-0 eJJEeC">
-          <div class="WhatsappDots__ComponentInner-pks5bf-1 hFENyl">
-            <div class="WhatsappDots__Dot-pks5bf-2 WhatsappDots__DotOne-pks5bf-3 ixsrax"></div>
-            <div class="WhatsappDots__Dot-pks5bf-2 WhatsappDots__DotTwo-pks5bf-4 dRvxoz"></div>
-            <div class="WhatsappDots__Dot-pks5bf-2 WhatsappDots__DotThree-pks5bf-5 kXBtNt"></div>
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">Ben</span> Tunahan.</h1>
+    <p>Sadece Tunahan.</p>
+    <img src="https://cdn.discordapp.com/attachments/714772669693952010/952138397961564161/unknown.png" alt="boy" class="w3-image" width="496" height="554">
+  </header>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h2 class="w3-text-light-grey">Tunahan</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>Bilmen gereken her şey bu kısımda.
+    </p>
+    <h3 class="w3-padding-16 w3-text-light-grey">Yeteneklerim</h3>
+    <p class="w3-wide">Photography</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:55%"></div>
+    </div>
+    <p class="w3-wide">Web Design</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:35%"></div>
+    </div>
+    <p class="w3-wide">Photoshop</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:70%"></div>
           </div>
-        </div>
-        <div style="opacity: 1;" class="WhatsappChat__Message-sc-1wqac52-4 kAZgZq">
-          <div class="WhatsappChat__Author-sc-1wqac52-3 bMIBDo">Aktıp</div>
-          <div class="WhatsappChat__Text-sc-1wqac52-2 iSpIQi">Merhaba 👋<br><br>Nasıl yardımcı olabiliriz?</div>
-        </div>
+    <p class="w3-wide">Oyun</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:150%"></div>
+    </div><br>
+    
+    <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">3</span><br>
+        Partner
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">189+</span><br>
+        Yapılan proje
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">84+</span><br>
+        Mutlu Müşteri
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">150+</span><br>
+        Gergin müşteri
       </div>
     </div>
 
-    <div class='blanter-msg'>
-      <textarea id='chat-input' placeholder='Mesajınızı yazın.' maxlength='120' row='1'></textarea>
-      <a href='javascript:void;' id='send-it'><svg viewBox="0 0 448 448"><path d="M.213 32L0 181.333 320 224 0 266.667.213 416 448 224z"/></svg></a>
+    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+      <i class="fa fa-download"></i> Sakın indirme virüs!
+    </button>
+    
+    <!-- Grid for pricing tables -->
+    <h3 class="w3-padding-16 w3-text-light-grey">Ücretlendirme</h3>
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half w3-margin-bottom">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Basit</li>
+          <li class="w3-padding-16">Web Tasarım</li>
+          <li class="w3-padding-16">3 Revize</li>
+          <li class="w3-padding-16">Tek Kişi</li>
+          <li class="w3-padding-16">Mail Desteği</li>
+          <li class="w3-padding-16">
+            <h2>Salam Ekmek</h2>
+            <span class="w3-opacity">1 Aylık</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">Satın Al</button>
+          </li>
+        </ul>
+      </div>
 
+      <div class="w3-half">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Pro</li>
+          <li class="w3-padding-16">Web Tasarım</li>
+          <li class="w3-padding-16">Sınırsız Revize</li>
+          <li class="w3-padding-16">Ekip</li>
+          <li class="w3-padding-16">Canlı Destek</li>
+          <li class="w3-padding-16">
+            <h2>Mevlana Pide</h2>
+            <span class="w3-opacity">3 Aylık</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">Satın Al</button>
+          </li>
+        </ul>
+      </div>
+    <!-- End Grid/Pricing tables -->
     </div>
+    
+    <!-- Testimonials -->
+    <h3 class="w3-padding-24 w3-text-light-grey">Ekip</h3>  
+    <img src="https://cdn.discordapp.com/attachments/900266597330063410/951804699768651816/6RCCBG0m_400x400.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-margin-right">M. Raşit Özgün</span> KYK'da Fırıncı.</p>
+    <p>Ekmekleri gerçekten çok iyi ısıtıyor.</p><br>
+    
+    <img src="https://cdn.discordapp.com/attachments/714772669693952010/952137623294595123/RekSai_0.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-margin-right">Mustafa "Reksai" Köle.</span> KYK'da Usta.</p>
+    <p>Daha iyi salam ekmek yapan yok.</p>
+  <!-- End About Section -->
   </div>
-  <div id='get-number'></div><a class='close-chat' href='javascript:void'>×</a>
+  
+  <!-- Portfolio Section -->
+  <div class="w3-padding-64 w3-content" id="photos">
+    <h2 class="w3-text-light-grey">Galeri</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <!-- Grid for photos -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+        <img src="https://cdn.discordapp.com/attachments/714772669693952010/952140679532904508/7514f9fe-bbb0-46d7-8913-3efeaa7d60a4.JPG" style="width:100%">
+        <img src="https://cdn.discordapp.com/attachments/714772669693952010/952140687476936724/b7942f52-b86f-403b-8a71-a738e755b833.JPG" style="width:100%">
+        <img src="https://cdn.discordapp.com/attachments/714772669693952010/952140707081105428/IMG_6139.JPG" style="width:100%">
+      </div>
+
+      <div class="w3-half">
+        <img src="https://cdn.discordapp.com/attachments/714772669693952010/952140721887019028/IMG_6312.jpg" style="width:100%">
+        <img src="https://cdn.discordapp.com/attachments/714772669693952010/952141068382642247/7399E7C3-E939-495D-8C89-E563473A900E.JPG" style="width:100%">
+        <img src="https://cdn.discordapp.com/attachments/714772669693952010/952141083977080852/IMG_5695.jpg" style="width:100%">
+        <img src="https://cdn.discordapp.com/attachments/714772669693952010/952141083977080852/IMG_5695.jpg" style="width:100%">
+      </div>
+    <!-- End photo grid -->
+    </div>
+  <!-- End Portfolio Section -->
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">İletişime Geç</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Eskişehir, Türkiye</p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: 05412234532</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: tunahan@kyk.com</p>
+    </div><br>
+    <p>Bizimle iletişime geç, Mesaj gönder:</p>
+
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Ad" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Konu" required name="Subject"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Mesaj" required name="Message"></p>
+      <p>
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+          <i class="fa fa-paper-plane"></i> MESAJ GÖNDER
+        </button>
+      </p>
+    </form>
+  <!-- End Contact Section -->
+  </div>
+  
+<!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
+<footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+ <p class="w3-small">KYK CEHENNEMDİR:)</p>
+ <!-- End footer -->
+</footer>
+
+<!-- END PAGE CONTENT -->
 </div>
-<a class='blantershow-chat' href='javascript:void' title='Mesaj Gönder'><svg width="20" viewBox="0 0 24 24"><defs/><path fill="#eceff1" d="M20.5 3.4A12.1 12.1 0 0012 0 12 12 0 001.7 17.8L0 24l6.3-1.7c2.8 1.5 5 1.4 5.8 1.5a12 12 0 008.4-20.3z"/><path fill="#4caf50" d="M12 21.8c-3.1 0-5.2-1.6-5.4-1.6l-3.7 1 1-3.7-.3-.4A9.9 9.9 0 012.1 12a10 10 0 0117-7 9.9 9.9 0 01-7 16.9z"/><path fill="#fafafa" d="M17.5 14.3c-.3 0-1.8-.8-2-.9-.7-.2-.5 0-1.7 1.3-.1.2-.3.2-.6.1s-1.3-.5-2.4-1.5a9 9 0 01-1.7-2c-.3-.6.4-.6 1-1.7l-.1-.5-1-2.2c-.2-.6-.4-.5-.6-.5-.6 0-1 0-1.4.3-1.6 1.8-1.2 3.6.2 5.6 2.7 3.5 4.2 4.2 6.8 5 .7.3 1.4.3 1.9.2.6 0 1.7-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></svg> Bize ulaşın</a>
-<!-- partial -->
-  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script><script  src="./script.js"></script>
 
 </body>
 </html>
