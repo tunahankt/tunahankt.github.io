@@ -31,7 +31,6 @@
       padding: 100px 20px 40px;
     }
 
-    /* NAVBAR */
     nav {
       position: fixed;
       top: 0;
@@ -58,7 +57,6 @@
     }
     .nav-links a:hover { color: var(--accent); }
 
-    /* LANGUAGE SWITCH */
     .lang-switch {
       display: inline-flex;
       align-items: center;
@@ -75,37 +73,6 @@
     .lang-switch:hover { border-color: var(--accent); }
     .lang-switch img { width: 22px; height: auto; }
 
-    /* FLOATING ACTIONS */
-    .floating-actions {
-      position: fixed;
-      right: 24px;
-      bottom: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      z-index: 999;
-    }
-    .fab {
-      background: var(--accent);
-      color: #020617;
-      padding: 14px 16px;
-      border-radius: 14px;
-      font-weight: 600;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-      transition: 0.3s;
-    }
-    .fab.secondary {
-      background: #020617;
-      color: var(--text);
-      border: 1px solid #1e293b;
-    }
-    .fab:hover { transform: translateY(-3px); }
-
-    /* SECTIONS */
     section {
       background: rgba(15,23,42,0.85);
       border-radius: 18px;
@@ -123,17 +90,10 @@
       margin-bottom: 18px;
       color: var(--accent);
     }
-    .item { margin-bottom: 18px; }
-    .item h3 { font-size: 1.15rem; font-weight: 600; }
-    .item span { font-size: 0.9rem; color: var(--muted); }
-    ul { margin-top: 10px; padding-left: 18px; }
-    li { margin-bottom: 6px; }
 
-    /* HERO */
     .hero h1 { font-size: 2.8rem; margin-bottom: 10px; }
     .hero p { color: var(--muted); max-width: 700px; }
 
-    /* SKILLS */
     .skills {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -160,14 +120,12 @@
   <div class="nav-inner">
     <strong>Tunahan K.</strong>
     <div class="nav-links">
-      <a href="#about" data-tr="about">Hakkımda</a>
-      <a href="#experience" data-tr="experience">Deneyim</a>
-      <a href="#skills" data-tr="skills">Beceriler</a>
-      <a href="#education" data-tr="education">Eğitim</a>
-      <a href="#certs" data-tr="certs">Sertifikalar</a>
-
-      <!-- Language Switch -->
-      <div class="lang-switch" onclick="toggleLang()" title="Dil Değiştir">
+      <a href="#about" data-key="about">Hakkımda</a>
+      <a href="#experience" data-key="experience">Deneyim</a>
+      <a href="#skills" data-key="skills">Beceriler</a>
+      <a href="#education" data-key="education">Eğitim</a>
+      <a href="#certs" data-key="certs">Sertifikalar</a>
+      <div class="lang-switch" id="langSwitch" title="Change language">
         <img id="flag" src="https://flagcdn.com/w20/tr.png" alt="TR">
       </div>
     </div>
@@ -178,92 +136,89 @@
 
   <section class="hero">
     <h1>Tunahan Küçükturgut</h1>
-    <p id="heroText">
-      Dijital topluluk yönetimi, sosyal medya, müşteri ilişkileri ve teknoloji odaklı alanlarda deneyimli; sorumluluk almaktan çekinmeyen ve sürekli gelişimi hedefleyen bir profesyonelim.
-    </p>
-    <div class="hero-actions">
-      <a class="btn" href="Tunahan_Kucukturgut_CV.pdf" download>
-        <i class="fa-solid fa-file-arrow-down"></i> PDF CV İndir
-      </a>
-      <a class="btn secondary" href="mailto:tunahan.kt74@gmail.com">İletişime Geç</a>
-    </div>
+    <p id="heroText"></p>
   </section>
 
-  <section id="about">
-    <h2>Hakkımda</h2>
-    <p>
-      Bilgisayar Programcılığı mezunuyum. Sosyal medya yönetimi, dijital topluluk organizasyonu, müşteri ilişkileri ve teknik destek alanlarında aktif görev aldım. 11.000+ kişilik çevrim içi toplulukları yöneterek kriz yönetimi, ekip koordinasyonu ve kullanıcı memnuniyeti konularında güçlü deneyim kazandım.
-    </p>
-  </section>
+  <section id="about"><h2 data-key="about">Hakkımda</h2><p id="aboutText"></p></section>
+  <section id="experience"><h2 data-key="experience">Deneyim</h2><p id="experienceText"></p></section>
+  <section id="skills"><h2 data-key="skills">Beceriler</h2><div class="skills"><div class="badge">Sosyal Medya</div><div class="badge">Topluluk Yönetimi</div><div class="badge">Photoshop</div></div></section>
+  <section id="education"><h2 data-key="education">Eğitim</h2><p id="educationText"></p></section>
+  <section id="certs"><h2 data-key="certs">Sertifikalar</h2><ul><li>Usta Öğreticilik</li><li>IHA-1</li></ul></section>
 
-  <section id="experience">
-    <h2>Deneyim</h2>
-
-    <div class="item">
-      <h3>Aktıp Bartın Teknoloji Geliştirme ve Danışmanlık A.Ş.</h3>
-      <span>Ekim 2023 – Şubat 2025</span>
-      <ul>
-        <li>Sosyal medya hesaplarının yönetimi ve içerik planlaması</li>
-        <li>Müşteri ilişkileri ve satış sonrası destek</li>
-        <li>3D yazıcı ve 3D model üretimi</li>
-      </ul>
-    </div>
-
-    <div class="item">
-      <h3>RED Games — Community Manager</h3>
-      <span>Mayıs 2019 – Kasım 2025</span>
-      <ul>
-        <li>11.000+ kişilik topluluk yönetimi</li>
-        <li>Kriz ve yetkili ekip yönetimi</li>
-        <li>Dijital satış ve ödeme süreçleri</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2>Beceriler</h2>
-    <div class="skills">
-      <div class="badge">Sosyal Medya Yönetimi</div>
-      <div class="badge">Topluluk Yönetimi</div>
-      <div class="badge">Müşteri İletişimi</div>
-      <div class="badge">Adobe Photoshop</div>
-      <div class="badge">Canva</div>
-      <div class="badge">Office & Excel</div>
-    </div>
-  </section>
-
-  <section id="education">
-    <h2>Eğitim</h2>
-    <div class="item">
-      <h3>Eskişehir Osmangazi Üniversitesi</h3>
-      <span>Bilgisayar Programcılığı · 2023</span>
-    </div>
-  </section>
-
-  <section id="certs">
-    <h2>Sertifikalar</h2>
-    <ul>
-      <li>Usta Öğreticilik Belgesi</li>
-      <li>IHA-1 Sportif / Amatöri</li>
-      <li>B Tipi Ehliyet</li>
-    </ul>
-  </section>
-
-  <section id="contact">
+  <section id="contact" style="text-align:center;">
     <h2>İletişim & CV</h2>
-    <p>Benimle iletişime geçmek veya CV’mi indirmek için aşağıdaki butonları kullanabilirsiniz.</p>
-    <div class="hero-actions" style="margin-top:20px;">
-      <a class="btn" href="Tunahan_Kucukturgut_CV.pdf" download>
-        <i class="fa-solid fa-file-arrow-down"></i> PDF CV İndir
-      </a>
-      <a class="btn secondary" href="mailto:tunahan.kt74@gmail.com">
-        <i class="fa-solid fa-envelope"></i> İletişime Geç
-      </a>
+    <p style="max-width:600px;margin:0 auto 24px;color:var(--muted);">You can contact me or download my CV using the options below.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:700px;margin:0 auto;">
+      <div style="background:#020617;border:1px solid #1e293b;border-radius:18px;padding:24px;">
+        <i class="fa-solid fa-envelope" style="font-size:28px;color:var(--accent);"></i>
+        <h3>Email</h3>
+        <a href="mailto:tunahan.kt74@gmail.com">tunahan.kt74@gmail.com</a>
+      </div>
+      <div style="background:#020617;border:1px solid #1e293b;border-radius:18px;padding:24px;">
+        <i class="fa-solid fa-file-lines" style="font-size:28px;color:var(--accent);"></i>
+        <h3>CV</h3>
+        <a href="Tunahan_Kucukturgut_CV.pdf" download>CV'yi İndir</a>
+      </div>
     </div>
   </section>
 
-  <footer>
-    © 2025 Tunahan Küçükturgut
-  </footer>
+  <footer>© 2025 Tunahan Küçükturgut</footer>
+</div>
 
-  
+<script>
+  const translations = {
+    tr: {
+      hero: 'Dijital topluluk yönetimi, sosyal medya ve müşteri ilişkileri alanlarında deneyimli, sorumluluk almaktan çekinmeyen ve sürekli gelişimi hedefleyen bir profesyonelim.',
+      about: 'Hakkımda',
+      aboutText: 'Bilgisayar Programcılığı mezunuyum. Dijital topluluklar, sosyal medya yönetimi ve müşteri ilişkileri alanlarında aktif roller üstlendim.',
+      experience: 'Deneyim',
+      experienceText: '11.000+ üyeli çevrim içi toplulukların yönetimi, sosyal medya süreçleri ve dijital platform operasyonlarında deneyim sahibiyim.',
+      skills: 'Beceriler',
+      education: 'Eğitim',
+      educationText: 'Eskişehir Osmangazi Üniversitesi — Bilgisayar Programcılığı',
+      certs: 'Sertifikalar'
+    },
+    en: {
+      hero: 'A proactive professional experienced in community management, social media operations, and customer relations, with a strong focus on continuous improvement.',
+      about: 'About',
+      aboutText: 'I am a Computer Programming graduate with hands-on experience in digital community management, social media operations, and customer relations.',
+      experience: 'Experience',
+      experienceText: 'Experienced in managing online communities with 11,000+ members, handling digital platform operations, and supporting customer-focused processes.',
+      skills: 'Skills',
+      education: 'Education',
+      educationText: 'Eskisehir Osmangazi University — Computer Programming',
+      certs: 'Certificates'
+    }
+  };
+
+  const langSwitch = document.getElementById('langSwitch');
+  const flag = document.getElementById('flag');
+  let lang = localStorage.getItem('lang') || 'tr';
+
+  function applyLang() {
+    const t = translations[lang];
+    document.getElementById('heroText').innerText = t.hero;
+    document.getElementById('aboutText').innerText = t.aboutText;
+    document.getElementById('experienceText').innerText = t.experienceText;
+    document.getElementById('educationText').innerText = t.educationText;
+
+    document.querySelectorAll('[data-key]').forEach(el => {
+      el.innerText = t[el.dataset.key];
+    });
+
+    flag.src = lang === 'tr'
+      ? 'https://flagcdn.com/w20/tr.png'
+      : 'https://flagcdn.com/w20/gb.png';
+  }
+
+  langSwitch.addEventListener('click', () => {
+    lang = lang === 'tr' ? 'en' : 'tr';
+    localStorage.setItem('lang', lang);
+    applyLang();
+  });
+
+  applyLang();
+</script>
+
+</body>
+</html>
