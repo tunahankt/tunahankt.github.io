@@ -1,222 +1,269 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Hades</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-    body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-    .w3-row-padding img {margin-bottom: 12px}
-    /* Set the width of the sidebar to 120px */
-    .w3-sidebar {width: 120px;background: #222;}
-    /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-    #main {margin-left: 120px}
-    /* Remove margins from "page content" on small screens */
-    @media only screen and (max-width: 600px) {#main {margin-left: 0}}
-    </style>
-  </head>
-<body class="w3-black">
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tunahan Küçükturgut | CV</title>
 
-<!-- Icon Bar (Sidebar - hidden on small screens) -->
-<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <!-- Avatar image in top left corner -->
-  <img src="https://cdn.discordapp.com/attachments/900266597330063410/951794552308637736/WhatsApp_Image_2022-03-11_at_11.17.48.jpeg" style="width:100%">
-  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
-    <i class="fa fa-home w3-xxlarge"></i>
-    <p>GENEL</p>
-  </a>
-  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-user w3-xxlarge"></i>
-    <p>HAKKIMDA</p>
-  </a>
-  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-eye w3-xxlarge"></i>
-    <p>GALERİ</p>
-  </a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
-    <p>İLETİŞİME GEÇ</p>
-  </a>
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #020617;
+      --card: #0f172a;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #38bdf8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #020617, #020617);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 100px 20px 40px;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(2,6,23,0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #1e293b;
+      z-index: 1000;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+    }
+    .nav-links a {
+      margin-left: 18px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* LANGUAGE SWITCH */
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 28px;
+      margin-left: 16px;
+      border-radius: 8px;
+      border: 1px solid #1e293b;
+      cursor: pointer;
+      background: #020617;
+      transition: 0.3s;
+    }
+    .lang-switch:hover { border-color: var(--accent); }
+    .lang-switch img { width: 22px; height: auto; }
+
+    /* FLOATING ACTIONS */
+    .floating-actions {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 999;
+    }
+    .fab {
+      background: var(--accent);
+      color: #020617;
+      padding: 14px 16px;
+      border-radius: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      transition: 0.3s;
+    }
+    .fab.secondary {
+      background: #020617;
+      color: var(--text);
+      border: 1px solid #1e293b;
+    }
+    .fab:hover { transform: translateY(-3px); }
+
+    /* SECTIONS */
+    section {
+      background: rgba(15,23,42,0.85);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+      animation: fadeUp 0.8s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 18px;
+      color: var(--accent);
+    }
+    .item { margin-bottom: 18px; }
+    .item h3 { font-size: 1.15rem; font-weight: 600; }
+    .item span { font-size: 0.9rem; color: var(--muted); }
+    ul { margin-top: 10px; padding-left: 18px; }
+    li { margin-bottom: 6px; }
+
+    /* HERO */
+    .hero h1 { font-size: 2.8rem; margin-bottom: 10px; }
+    .hero p { color: var(--muted); max-width: 700px; }
+
+    /* SKILLS */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .badge {
+      background: #020617;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid #1e293b;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <strong>Tunahan K.</strong>
+    <div class="nav-links">
+      <a href="#about" data-tr="about">Hakkımda</a>
+      <a href="#experience" data-tr="experience">Deneyim</a>
+      <a href="#skills" data-tr="skills">Beceriler</a>
+      <a href="#education" data-tr="education">Eğitim</a>
+      <a href="#certs" data-tr="certs">Sertifikalar</a>
+
+      <!-- Language Switch -->
+      <div class="lang-switch" onclick="toggleLang()" title="Dil Değiştir">
+        <img id="flag" src="https://flagcdn.com/w20/tr.png" alt="TR">
+      </div>
+    </div>
+  </div>
 </nav>
 
-<!-- Navbar on small screens (Hidden on medium and large screens) -->
-<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
-    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
-    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
-  </div>
-</div>
+<div class="container">
 
-<!-- Page Content -->
-<div class="w3-padding-large" id="main">
-  <!-- Header/Home -->
-  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-    <h1 class="w3-jumbo"><span class="w3-hide-small">Ben</span> Tunahan.</h1>
-    <p>Sadece Tunahan.</p>
-    <img src="https://cdn.discordapp.com/attachments/714772669693952010/952138397961564161/unknown.png" alt="boy" class="w3-image" width="496" height="554">
-  </header>
-
-  <!-- About Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-    <h2 class="w3-text-light-grey">Tunahan</h2>
-    <hr style="width:200px" class="w3-opacity">
-    <p>Bilmen gereken her şey bu kısımda.
+  <section class="hero">
+    <h1>Tunahan Küçükturgut</h1>
+    <p id="heroText">
+      Dijital topluluk yönetimi, sosyal medya, müşteri ilişkileri ve teknoloji odaklı alanlarda deneyimli; sorumluluk almaktan çekinmeyen ve sürekli gelişimi hedefleyen bir profesyonelim.
     </p>
-    <h3 class="w3-padding-16 w3-text-light-grey">Yeteneklerim</h3>
-    <p class="w3-wide">Photography</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:55%"></div>
+    <div class="hero-actions">
+      <a class="btn" href="Tunahan_Kucukturgut_CV.pdf" download>
+        <i class="fa-solid fa-file-arrow-down"></i> PDF CV İndir
+      </a>
+      <a class="btn secondary" href="mailto:tunahan.kt74@gmail.com">İletişime Geç</a>
     </div>
-    <p class="w3-wide">Web Design</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:35%"></div>
-    </div>
-    <p class="w3-wide">Photoshop</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:70%"></div>
-          </div>
-    <p class="w3-wide">Oyun</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:150%"></div>
-    </div><br>
-    
-    <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">3</span><br>
-        Partner
-      </div>
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">189+</span><br>
-        Yapılan proje
-      </div>
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">84+</span><br>
-        Mutlu Müşteri
-      </div>
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">150+</span><br>
-        Gergin müşteri
-      </div>
+  </section>
+
+  <section id="about">
+    <h2>Hakkımda</h2>
+    <p>
+      Bilgisayar Programcılığı mezunuyum. Sosyal medya yönetimi, dijital topluluk organizasyonu, müşteri ilişkileri ve teknik destek alanlarında aktif görev aldım. 11.000+ kişilik çevrim içi toplulukları yöneterek kriz yönetimi, ekip koordinasyonu ve kullanıcı memnuniyeti konularında güçlü deneyim kazandım.
+    </p>
+  </section>
+
+  <section id="experience">
+    <h2>Deneyim</h2>
+
+    <div class="item">
+      <h3>Aktıp Bartın Teknoloji Geliştirme ve Danışmanlık A.Ş.</h3>
+      <span>Ekim 2023 – Şubat 2025</span>
+      <ul>
+        <li>Sosyal medya hesaplarının yönetimi ve içerik planlaması</li>
+        <li>Müşteri ilişkileri ve satış sonrası destek</li>
+        <li>3D yazıcı ve 3D model üretimi</li>
+      </ul>
     </div>
 
-    <button class="w3-button w3-light-grey w3-padding-large w3-section">
-      <i class="fa fa-download"></i> Sakın indirme virüs!
-    </button>
-    
-    <!-- Grid for pricing tables -->
-    <h3 class="w3-padding-16 w3-text-light-grey">Ücretlendirme</h3>
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-half w3-margin-bottom">
-        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-          <li class="w3-dark-grey w3-xlarge w3-padding-32">Basit</li>
-          <li class="w3-padding-16">Web Tasarım</li>
-          <li class="w3-padding-16">3 Revize</li>
-          <li class="w3-padding-16">Tek Kişi</li>
-          <li class="w3-padding-16">Mail Desteği</li>
-          <li class="w3-padding-16">
-            <h2>Salam Ekmek</h2>
-            <span class="w3-opacity">1 Aylık</span>
-          </li>
-          <li class="w3-light-grey w3-padding-24">
-            <button class="w3-button w3-white w3-padding-large w3-hover-black">Satın Al</button>
-          </li>
-        </ul>
-      </div>
-
-      <div class="w3-half">
-        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-          <li class="w3-dark-grey w3-xlarge w3-padding-32">Pro</li>
-          <li class="w3-padding-16">Web Tasarım</li>
-          <li class="w3-padding-16">Sınırsız Revize</li>
-          <li class="w3-padding-16">Ekip</li>
-          <li class="w3-padding-16">Canlı Destek</li>
-          <li class="w3-padding-16">
-            <h2>Mevlana Pide</h2>
-            <span class="w3-opacity">3 Aylık</span>
-          </li>
-          <li class="w3-light-grey w3-padding-24">
-            <button class="w3-button w3-white w3-padding-large w3-hover-black">Satın Al</button>
-          </li>
-        </ul>
-      </div>
-    <!-- End Grid/Pricing tables -->
+    <div class="item">
+      <h3>RED Games — Community Manager</h3>
+      <span>Mayıs 2019 – Kasım 2025</span>
+      <ul>
+        <li>11.000+ kişilik topluluk yönetimi</li>
+        <li>Kriz ve yetkili ekip yönetimi</li>
+        <li>Dijital satış ve ödeme süreçleri</li>
+      </ul>
     </div>
-    
-    <!-- Testimonials -->
-    <h3 class="w3-padding-24 w3-text-light-grey">Ekip</h3>  
-    <img src="https://cdn.discordapp.com/attachments/900266597330063410/951804699768651816/6RCCBG0m_400x400.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-    <p><span class="w3-large w3-margin-right">M. Raşit Özgün</span> KYK'da Fırıncı.</p>
-    <p>Ekmekleri gerçekten çok iyi ısıtıyor.</p><br>
-    
-    <img src="https://cdn.discordapp.com/attachments/714772669693952010/952137623294595123/RekSai_0.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-    <p><span class="w3-large w3-margin-right">Mustafa "Reksai" Köle.</span> KYK'da Usta.</p>
-    <p>Daha iyi salam ekmek yapan yok.</p>
-  <!-- End About Section -->
-  </div>
+  </section>
+
+  <section id="skills">
+    <h2>Beceriler</h2>
+    <div class="skills">
+      <div class="badge">Sosyal Medya Yönetimi</div>
+      <div class="badge">Topluluk Yönetimi</div>
+      <div class="badge">Müşteri İletişimi</div>
+      <div class="badge">Adobe Photoshop</div>
+      <div class="badge">Canva</div>
+      <div class="badge">Office & Excel</div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Eğitim</h2>
+    <div class="item">
+      <h3>Eskişehir Osmangazi Üniversitesi</h3>
+      <span>Bilgisayar Programcılığı · 2023</span>
+    </div>
+  </section>
+
+  <section id="certs">
+    <h2>Sertifikalar</h2>
+    <ul>
+      <li>Usta Öğreticilik Belgesi</li>
+      <li>IHA-1 Sportif / Amatöri</li>
+      <li>B Tipi Ehliyet</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>İletişim & CV</h2>
+    <p>Benimle iletişime geçmek veya CV’mi indirmek için aşağıdaki butonları kullanabilirsiniz.</p>
+    <div class="hero-actions" style="margin-top:20px;">
+      <a class="btn" href="Tunahan_Kucukturgut_CV.pdf" download>
+        <i class="fa-solid fa-file-arrow-down"></i> PDF CV İndir
+      </a>
+      <a class="btn secondary" href="mailto:tunahan.kt74@gmail.com">
+        <i class="fa-solid fa-envelope"></i> İletişime Geç
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Tunahan Küçükturgut
+  </footer>
+
   
-  <!-- Portfolio Section -->
-  <div class="w3-padding-64 w3-content" id="photos">
-    <h2 class="w3-text-light-grey">Galeri</h2>
-    <hr style="width:200px" class="w3-opacity">
-
-    <!-- Grid for photos -->
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-half">
-        <img src="https://cdn.discordapp.com/attachments/714772669693952010/952140679532904508/7514f9fe-bbb0-46d7-8913-3efeaa7d60a4.JPG" style="width:100%">
-        <img src="https://cdn.discordapp.com/attachments/714772669693952010/952140687476936724/b7942f52-b86f-403b-8a71-a738e755b833.JPG" style="width:100%">
-        <img src="https://cdn.discordapp.com/attachments/714772669693952010/952140707081105428/IMG_6139.JPG" style="width:100%">
-      </div>
-
-      <div class="w3-half">
-        <img src="https://cdn.discordapp.com/attachments/714772669693952010/952140721887019028/IMG_6312.jpg" style="width:100%">
-        <img src="https://cdn.discordapp.com/attachments/714772669693952010/952141068382642247/7399E7C3-E939-495D-8C89-E563473A900E.JPG" style="width:100%">
-        <img src="https://cdn.discordapp.com/attachments/714772669693952010/952141083977080852/IMG_5695.jpg" style="width:100%">
-        <img src="https://cdn.discordapp.com/attachments/714772669693952010/952141083977080852/IMG_5695.jpg" style="width:100%">
-      </div>
-    <!-- End photo grid -->
-    </div>
-  <!-- End Portfolio Section -->
-  </div>
-
-  <!-- Contact Section -->
-  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-    <h2 class="w3-text-light-grey">İletişime Geç</h2>
-    <hr style="width:200px" class="w3-opacity">
-
-    <div class="w3-section">
-      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Eskişehir, Türkiye</p>
-      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: 05412234532</p>
-      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: tunahan@kyk.com</p>
-    </div><br>
-    <p>Bizimle iletişime geç, Mesaj gönder:</p>
-
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Ad" required name="Name"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Konu" required name="Subject"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Mesaj" required name="Message"></p>
-      <p>
-        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
-          <i class="fa fa-paper-plane"></i> MESAJ GÖNDER
-        </button>
-      </p>
-    </form>
-  <!-- End Contact Section -->
-  </div>
-  
-<!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
-<footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
- <p class="w3-small">KYK CEHENNEMDİR:)</p>
- <!-- End footer -->
-</footer>
-
-<!-- END PAGE CONTENT -->
-</div>
-
-</body>
-</html>
