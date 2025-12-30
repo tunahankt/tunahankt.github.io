@@ -68,14 +68,27 @@ function startIntro() {
   document.body.style.pointerEvents = "auto";
 
   const introTL = gsap.timeline({
-    onComplete: () => {
-      document.body.classList.remove("lock-scroll");
-      lenis.start();
-      ScrollTrigger.refresh();
+  onComplete: () => {
+  // Scroll kilidini kaldır
+  document.body.classList.remove("lock-scroll");
 
-      document.documentElement.style.height = "auto";
-      document.body.style.height = "auto";
-    }
+  // Scroll'u ZORLA en üste al (mobil fix)
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+
+  // Lenis'i en üstten başlat
+  lenis.scrollTo(0, { immediate: true });
+  lenis.start();
+
+  // Trigger'ları yeniden hesapla
+  ScrollTrigger.refresh(true);
+
+  // Height reset (mobil beyazlık fix)
+  document.documentElement.style.height = "auto";
+  document.body.style.height = "auto";
+}
+
   });
 
   introTL
