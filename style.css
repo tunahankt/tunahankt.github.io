@@ -1,3 +1,10 @@
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: #0b0e14;
+}
+
 body.lock-scroll {
   overflow: hidden;
 }
@@ -130,7 +137,8 @@ ul {
    HERO
 ================================ */
 .hero {
-  min-height: 100vh;
+  min-height: 100svh;
+  padding-top: 120px; /* header height fix */
   display: flex;
   align-items: center;
 }
@@ -160,6 +168,16 @@ ul {
   margin-top: 40px;
   display: flex;
   gap: 20px;
+
+}
+/* ===============================
+   HERO INITIAL STATE (ANTI-FLASH)
+================================ */
+.hero-title,
+.hero-subtitle,
+.hero-description,
+.hero-actions a {
+  opacity: 0;
 }
 
 .btn {
@@ -279,4 +297,60 @@ ul {
   .nav-links {
     display: none;
   }
+}
+
+/* ===============================
+   LOADER
+================================ */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #0b0e14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loader-content {
+  text-align: center;
+  width: 260px;
+}
+
+.loader-text {
+  display: block;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  color: var(--accent);
+}
+
+.progress-wrapper {
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.1);
+  overflow: hidden;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: var(--accent);
+}
+
+.progress-percent {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+body {
+  overscroll-behavior: none;
+}
+
+* {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

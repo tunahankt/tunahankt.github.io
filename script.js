@@ -1,4 +1,51 @@
 /* ===============================
+   INITIAL LOCK
+================================ */
+document.body.classList.add("lock-scroll");
+
+/* ===============================
+   LOADER PROGRESS SIMULATION
+================================ */
+const loader = document.getElementById("loader");
+const progressBar = document.querySelector(".progress-bar");
+const progressText = document.querySelector(".progress-percent");
+
+let progress = 0;
+
+const fakeLoading = setInterval(() => {
+  progress += Math.random() * 12;
+
+  if (progress >= 100) {
+    progress = 100;
+    clearInterval(fakeLoading);
+
+    gsap.to(progressBar, {
+      width: "100%",
+      duration: 0.4
+    });
+
+    progressText.textContent = "100%";
+
+    // Loader out
+    gsap.to(loader, {
+      opacity: 0,
+      duration: 0.6,
+      delay: 0.3,
+      pointerEvents: "none",
+      onComplete: startIntro
+    });
+
+
+  } else {
+    gsap.to(progressBar, {
+      width: `${progress}%`,
+      duration: 0.3
+    });
+    progressText.textContent = `${Math.floor(progress)}%`;
+  }
+}, 200);
+
+/* ===============================
    LENIS + GSAP STABLE INTEGRATION
 ================================ */
 document.body.classList.add("lock-scroll");
@@ -13,6 +60,49 @@ const lenis = new Lenis({
 
 lenis.on("scroll", ScrollTrigger.update);
 lenis.stop(); // 🔒 intro bitene kadar
+
+function startIntro() {
+  // Loader'ı DOM'dan tamamen kaldır
+  if (loader) loader.remove();
+
+  document.body.style.pointerEvents = "auto";
+
+  const introTL = gsap.timeline({
+    onComplete: () => {
+      document.body.classList.remove("lock-scroll");
+      lenis.start();
+      ScrollTrigger.refresh();
+
+      document.documentElement.style.height = "auto";
+      document.body.style.height = "auto";
+    }
+  });
+
+  introTL
+    .fromTo(
+      ".hero-title",
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1 }
+    )
+    .fromTo(
+      ".hero-subtitle",
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.8 },
+      "-=0.4"
+    )
+    .fromTo(
+      ".hero-description",
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.8 },
+      "-=0.4"
+    )
+    .fromTo(
+      ".hero-actions a",
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.6, stagger: 0.15 },
+      "-=0.3"
+    );
+}
 
 // GSAP ticker instead of RAF
 gsap.ticker.add((time) => {
@@ -222,3 +312,17 @@ langToggle.addEventListener("click", () => {
 
 // INIT
 applyLanguage(currentLang);
+
+/* ===============================
+   COPY PROTECTION
+================================ */
+document.addEventListener("contextmenu", e => e.preventDefault());
+
+document.addEventListener("keydown", e => {
+  if (
+    (e.ctrlKey && ["c", "u", "s"].includes(e.key.toLowerCase())) ||
+    (e.ctrlKey && e.shiftKey && ["i", "j"].includes(e.key.toLowerCase()))
+  ) {
+    e.preventDefault();
+  }
+});
