@@ -2,223 +2,175 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
+  <title>Tunahan Küçükturgut | Digital Operations & IT Professional</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Digital Operations & IT-oriented professional with experience in technical support, community management and digital systems." />
+  <meta name="author" content="Tunahan Küçükturgut" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tunahan Küçükturgut | CV</title>
 
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tunahan Küçükturgut | Professional CV" />
+  <meta property="og:description" content="Digital Operations & IT-oriented professional portfolio website." />
+  <meta property="og:type" content="website" />
 
-  <style>
-    :root {
-      --bg: #020617;
-      --card: #0f172a;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --accent: #38bdf8;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top, #020617, #020617);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 100px 20px 40px;
-    }
+  <!-- Fonts (placeholder) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(2,6,23,0.85);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #1e293b;
-      z-index: 1000;
-    }
-    .nav-inner {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 20px;
-    }
-    .nav-links a {
-      margin-left: 18px;
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: 0.3s;
-    }
-    .nav-links a:hover { color: var(--accent); }
-
-    .lang-switch {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 38px;
-      height: 28px;
-      margin-left: 16px;
-      border-radius: 8px;
-      border: 1px solid #1e293b;
-      cursor: pointer;
-      background: #020617;
-      transition: 0.3s;
-    }
-    .lang-switch:hover { border-color: var(--accent); }
-    .lang-switch img { width: 22px; height: auto; }
-
-    section {
-      background: rgba(15,23,42,0.85);
-      border-radius: 18px;
-      padding: 28px;
-      margin-bottom: 28px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-      animation: fadeUp 0.8s ease both;
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    section h2 {
-      font-size: 1.6rem;
-      margin-bottom: 18px;
-      color: var(--accent);
-    }
-
-    .hero h1 { font-size: 2.8rem; margin-bottom: 10px; }
-    .hero p { color: var(--muted); max-width: 700px; }
-
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-    }
-    .badge {
-      background: #020617;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid #1e293b;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-  </style>
+  <!-- CSS (AŞAMA 2'de doldurulacak) -->
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-<nav>
-  <div class="nav-inner">
-    <strong>Tunahan K.</strong>
-    <div class="nav-links">
-      <a href="#about" data-key="about">Hakkımda</a>
-      <a href="#experience" data-key="experience">Deneyim</a>
-      <a href="#skills" data-key="skills">Beceriler</a>
-      <a href="#education" data-key="education">Eğitim</a>
-      <a href="#certs" data-key="certs">Sertifikalar</a>
-      <div class="lang-switch" id="langSwitch" title="Change language">
-        <img id="flag" src="https://flagcdn.com/w20/tr.png" alt="TR">
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.5/bundled/lenis.min.js"></script>
+
+<body class="dark-theme">
+
+  <!-- ================= HEADER / NAV ================= -->
+  <header class="header">
+    <nav class="nav">
+      <div class="logo">TK</div>
+
+      <ul class="nav-links">
+        <li><a href="#about" data-i18n="nav.about">About</a></li>
+        <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="lang-toggle">EN</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="section hero" id="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Tunahan Küçükturgut</h1>
+
+      <h2 class="hero-subtitle" data-i18n="hero.title">
+        Digital Operations & IT-Oriented Professional
+      </h2>
+
+      <p class="hero-description" data-i18n="hero.description">
+        Experienced in technical operations, digital systems, community management and corporate support processes.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn primary" data-i18n="hero.contact">Contact Me</a>
+        <a href="#" class="btn secondary" data-i18n="hero.download">Download CV</a>
       </div>
     </div>
-  </div>
-</nav>
-
-<div class="container">
-
-  <section class="hero">
-    <h1>Tunahan Küçükturgut</h1>
-    <p id="heroText"></p>
   </section>
 
-  <section id="about"><h2 data-key="about">Hakkımda</h2><p id="aboutText"></p></section>
-  <section id="experience"><h2 data-key="experience">Deneyim</h2><p id="experienceText"></p></section>
-  <section id="skills"><h2 data-key="skills">Beceriler</h2><div class="skills"><div class="badge">Sosyal Medya</div><div class="badge">Topluluk Yönetimi</div><div class="badge">Photoshop</div></div></section>
-  <section id="education"><h2 data-key="education">Eğitim</h2><p id="educationText"></p></section>
-  <section id="certs"><h2 data-key="certs">Sertifikalar</h2><ul><li>Usta Öğreticilik</li><li>IHA-1</li></ul></section>
+  <!-- ================= ABOUT ================= -->
+  <section class="section about" id="about">
+    <h3 class="section-title" data-i18n="about.title">About Me</h3>
 
-  <section id="contact" style="text-align:center;">
-    <h2>İletişim & CV</h2>
-    <p style="max-width:600px;margin:0 auto 24px;color:var(--muted);">You can contact me or download my CV using the options below.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:700px;margin:0 auto;">
-      <div style="background:#020617;border:1px solid #1e293b;border-radius:18px;padding:24px;">
-        <i class="fa-solid fa-envelope" style="font-size:28px;color:var(--accent);"></i>
-        <h3>Email</h3>
-        <a href="mailto:tunahan.kt74@gmail.com">tunahan.kt74@gmail.com</a>
+    <p class="section-text" data-i18n="about.text">
+      I am a digital operations professional with a strong background in IT systems, technical support, digital communities and operational processes.
+    </p>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section class="section skills" id="skills">
+    <h3 class="section-title" data-i18n="skills.title">Skills</h3>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4 data-i18n="skills.tech">Technical</h4>
+        <ul>
+          <li>IT Support & Networking</li>
+          <li>Office & Excel</li>
+          <li>3D Printing & Production</li>
+        </ul>
       </div>
-      <div style="background:#020617;border:1px solid #1e293b;border-radius:18px;padding:24px;">
-        <i class="fa-solid fa-file-lines" style="font-size:28px;color:var(--accent);"></i>
-        <h3>CV</h3>
-        <a href="Tunahan_Kucukturgut_CV.pdf" download>CV'yi İndir</a>
+
+      <div class="skill-group">
+        <h4 data-i18n="skills.digital">Digital</h4>
+        <ul>
+          <li>Social Media Management</li>
+          <li>Content Planning</li>
+          <li>Visual Design</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h4 data-i18n="skills.soft">Professional</h4>
+        <ul>
+          <li>Team Coordination</li>
+          <li>Customer Relations</li>
+          <li>Operational Management</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <footer>© 2025 Tunahan Küçükturgut</footer>
-</div>
+  <!-- ================= EXPERIENCE ================= -->
+  <section class="section experience" id="experience">
+    <h3 class="section-title" data-i18n="experience.title">Experience</h3>
 
-<script>
-  const translations = {
-    tr: {
-      hero: 'Dijital topluluk yönetimi, sosyal medya ve müşteri ilişkileri alanlarında deneyimli, sorumluluk almaktan çekinmeyen ve sürekli gelişimi hedefleyen bir profesyonelim.',
-      about: 'Hakkımda',
-      aboutText: 'Bilgisayar Programcılığı mezunuyum. Dijital topluluklar, sosyal medya yönetimi ve müşteri ilişkileri alanlarında aktif roller üstlendim.',
-      experience: 'Deneyim',
-      experienceText: '11.000+ üyeli çevrim içi toplulukların yönetimi, sosyal medya süreçleri ve dijital platform operasyonlarında deneyim sahibiyim.',
-      skills: 'Beceriler',
-      education: 'Eğitim',
-      educationText: 'Eskişehir Osmangazi Üniversitesi — Bilgisayar Programcılığı',
-      certs: 'Sertifikalar'
-    },
-    en: {
-      hero: 'A proactive professional experienced in community management, social media operations, and customer relations, with a strong focus on continuous improvement.',
-      about: 'About',
-      aboutText: 'I am a Computer Programming graduate with hands-on experience in digital community management, social media operations, and customer relations.',
-      experience: 'Experience',
-      experienceText: 'Experienced in managing online communities with 11,000+ members, handling digital platform operations, and supporting customer-focused processes.',
-      skills: 'Skills',
-      education: 'Education',
-      educationText: 'Eskisehir Osmangazi University — Computer Programming',
-      certs: 'Certificates'
-    }
-  };
+    <div class="timeline">
 
-  const langSwitch = document.getElementById('langSwitch');
-  const flag = document.getElementById('flag');
-  let lang = localStorage.getItem('lang') || 'tr';
+      <div class="timeline-item">
+        <span class="timeline-date">2023 — 2025</span>
+        <h4>Aktıp Bartın Teknoloji A.Ş.</h4>
+        <p data-i18n="experience.aktip">
+          Social media management, customer relations, purchasing processes and 3D production operations.
+        </p>
+      </div>
 
-  function applyLang() {
-    const t = translations[lang];
-    document.getElementById('heroText').innerText = t.hero;
-    document.getElementById('aboutText').innerText = t.aboutText;
-    document.getElementById('experienceText').innerText = t.experienceText;
-    document.getElementById('educationText').innerText = t.educationText;
+      <div class="timeline-item">
+        <span class="timeline-date">2019 — 2025</span>
+        <h4>RED Games</h4>
+        <p data-i18n="experience.red">
+          Community management for large-scale digital platforms and operational coordination.
+        </p>
+      </div>
 
-    document.querySelectorAll('[data-key]').forEach(el => {
-      el.innerText = t[el.dataset.key];
-    });
+    </div>
+  </section>
 
-    flag.src = lang === 'tr'
-      ? 'https://flagcdn.com/w20/tr.png'
-      : 'https://flagcdn.com/w20/gb.png';
-  }
+  <!-- ================= PROJECTS ================= -->
+  <section class="section projects" id="projects">
+    <h3 class="section-title" data-i18n="projects.title">Projects</h3>
 
-  langSwitch.addEventListener('click', () => {
-    lang = lang === 'tr' ? 'en' : 'tr';
-    localStorage.setItem('lang', lang);
-    applyLang();
-  });
+    <div class="projects-grid">
+      <div class="project-card">
+        <h4>Digital Community Operations</h4>
+        <p data-i18n="projects.community">
+          Managing large online communities with structured operational processes.
+        </p>
+      </div>
 
-  applyLang();
-</script>
+      <div class="project-card">
+        <h4>3D Production & Technology</h4>
+        <p data-i18n="projects.3d">
+          3D printer operations and production-focused workflows.
+        </p>
+      </div>
+    </div>
+  </section>
 
+  <!-- ================= CONTACT ================= -->
+  <section class="section contact" id="contact">
+    <h3 class="section-title" data-i18n="contact.title">Contact</h3>
+
+    <ul class="contact-list">
+      <li>Email: <a href="mailto:tunahan.kt74@gmail.com">tunahan.kt74@gmail.com</a></li>
+      <li>Location: Bartın, Turkey</li>
+    </ul>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>© 2025 Tunahan Küçükturgut</p>
+  </footer>
+
+  <!-- JS (AŞAMA 3'te doldurulacak) -->
+  <script src="script.js"></script>
 </body>
 </html>
