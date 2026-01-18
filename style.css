@@ -1,7 +1,10 @@
 body { 
     font-family: 'Space Grotesk', sans-serif; 
-    background-color: #0f172a;
+    background-color: #0f172a; 
     color: #f8fafc;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 .glow-bg {
