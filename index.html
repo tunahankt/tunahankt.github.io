@@ -1,189 +1,131 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <title>Tunahan Küçükturgut | Digital Operations & IT Professional</title>
-
-  <!-- SEO -->
-  <meta name="description" content="Digital Operations & IT-oriented professional with experience in technical support, community management and digital systems." />
-  <meta name="author" content="Tunahan Küçükturgut" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Tunahan Küçükturgut | Professional CV" />
-  <meta property="og:description" content="Digital Operations & IT-oriented professional portfolio website." />
-  <meta property="og:type" content="website" />
-
-  <!-- Fonts (placeholder) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <!-- CSS (AŞAMA 2'de doldurulacak) -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tunahan Küçükturgut | CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+<body class="antialiased selection:bg-cyan-500 selection:text-white">
 
-<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-<script src="https://unpkg.com/@studio-freight/lenis@1.0.5/bundled/lenis.min.js"></script>
+    <div class="glow-bg"></div>
 
-<body class="dark-theme">
-
-  <!-- ================= LOADER ================= -->
-<div id="loader">
-  <div class="loader-content">
-    <span class="loader-text">Loading</span>
-
-    <div class="progress-wrapper">
-      <div class="progress-bar"></div>
-    </div>
-
-    <span class="progress-percent">0%</span>
-  </div>
-</div>
-
-  <!-- ================= HEADER / NAV ================= -->
-  <header class="header">
-    <nav class="nav">
-      <div class="logo">TK</div>
-
-      <ul class="nav-links">
-        <li><a href="#about" data-i18n="nav.about">About</a></li>
-        <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
-        <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
-        <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
-        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <button id="lang-toggle">EN</button>
-      </div>
+    <nav class="fixed w-full z-50 top-0 left-0 p-6 flex justify-between items-center bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="text-xl font-bold tracking-tighter text-cyan-400">TK.</div>
+        
+        <div class="flex gap-4">
+            <a href="cv.pdf" download="Tunahan_Kucukturgut_CV" class="hidden md:flex items-center gap-2 px-5 py-2 text-slate-300 hover:text-white transition text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                CV İndir
+            </a>
+            
+            <a id="contact-btn" href="mailto:tunahan.kt74@gmail.com" class="px-5 py-2 border border-cyan-500 text-cyan-400 rounded-full hover:bg-cyan-500 hover:text-white transition text-sm cursor-pointer">
+                  İletişime Geç
+            </a>
+        </div>
     </nav>
-  </header>
 
-  <!-- ================= HERO ================= -->
-  <section class="section hero" id="hero">
-    <div class="hero-content">
-      <h1 class="hero-title">Tunahan Küçükturgut</h1>
-
-      <h2 class="hero-subtitle" data-i18n="hero.title">
-        Digital Operations & IT-Oriented Professional
-      </h2>
-
-      <p class="hero-description" data-i18n="hero.description">
-        Experienced in technical operations, digital systems, community management and corporate support processes.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#contact" class="btn primary" data-i18n="hero.contact">Contact Me</a>
-        <a href="#" class="btn secondary" data-i18n="hero.download">Download CV</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= ABOUT ================= -->
-  <section class="section about" id="about">
-    <h3 class="section-title" data-i18n="about.title">About Me</h3>
-
-    <p class="section-text" data-i18n="about.text">
-      I am a digital operations professional with a strong background in IT systems, technical support, digital communities and operational processes.
-    </p>
-  </section>
-
-  <!-- ================= SKILLS ================= -->
-  <section class="section skills" id="skills">
-    <h3 class="section-title" data-i18n="skills.title">Skills</h3>
-
-    <div class="skills-grid">
-      <div class="skill-group">
-        <h4 data-i18n="skills.tech">Technical</h4>
-        <ul>
-          <li>IT Support & Networking</li>
-          <li>Office & Excel</li>
-          <li>3D Printing & Production</li>
-        </ul>
-      </div>
-
-      <div class="skill-group">
-        <h4 data-i18n="skills.digital">Digital</h4>
-        <ul>
-          <li>Social Media Management</li>
-          <li>Content Planning</li>
-          <li>Visual Design</li>
-        </ul>
-      </div>
-
-      <div class="skill-group">
-        <h4 data-i18n="skills.soft">Professional</h4>
-        <ul>
-          <li>Team Coordination</li>
-          <li>Customer Relations</li>
-          <li>Operational Management</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= EXPERIENCE ================= -->
-  <section class="section experience" id="experience">
-    <h3 class="section-title" data-i18n="experience.title">Experience</h3>
-
-    <div class="timeline">
-
-      <div class="timeline-item">
-        <span class="timeline-date">2023 — 2025</span>
-        <h4>Aktıp Bartın Teknoloji A.Ş.</h4>
-        <p data-i18n="experience.aktip">
-          Social media management, customer relations, purchasing processes and 3D production operations.
+    <section class="h-screen flex flex-col justify-center items-start px-8 md:px-20 max-w-6xl mx-auto">
+        <p class="text-cyan-400 mb-4 tracking-widest text-sm uppercase font-semibold">Merhaba, ben</p>
+        <h1 class="text-6xl md:text-8xl font-bold mb-6 leading-tight text-white">
+            Tunahan<br><span class="text-slate-500">Küçükturgut.</span>
+        </h1>
+        <div class="text-2xl md:text-4xl text-slate-300 font-light h-12">
+            Ben bir <span id="typewriter" class="text-cyan-400 font-normal"></span><span class="cursor">&nbsp;</span>
+        </div>
+        <p class="mt-8 max-w-xl text-slate-400 text-lg leading-relaxed">
+            Bartın merkezli bir teknoloji profesyoneliyim. Topluluk yönetimi, dijital tasarım ve teknik çözümleri birleştirerek markalar ve kullanıcılar arasında köprü kuruyorum.
         </p>
-      </div>
+    </section>
 
-      <div class="timeline-item">
-        <span class="timeline-date">2019 — 2025</span>
-        <h4>RED Games</h4>
-        <p data-i18n="experience.red">
-          Community management for large-scale digital platforms and operational coordination.
-        </p>
-      </div>
+    <section class="py-20 px-8 md:px-20 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12 flex items-center gap-4 reveal text-white">
+            <span class="w-12 h-1 bg-cyan-500"></span> Yetenekler & Eğitim
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="glass-card p-8 md:col-span-2 rounded-2xl reveal">
+                <div class="text-cyan-400 text-sm mb-2">Eğitim</div>
+                <h3 class="text-xl font-bold mb-1 text-white">Eskişehir Osmangazi Üniversitesi</h3>
+                <p class="text-slate-400">Bilgisayar Programcılığı</p>
+                <div class="mt-4 text-xs text-slate-500">Mezuniyet: 2023</div>
+            </div>
 
-    </div>
-  </section>
+            <div class="glass-card p-8 md:col-span-1 rounded-2xl flex flex-col justify-center items-center text-center reveal">
+                <div class="text-4xl font-bold text-white mb-2">B2</div>
+                <div class="text-slate-400 text-sm">İngilizce</div>
+            </div>
 
-  <!-- ================= PROJECTS ================= -->
-  <section class="section projects" id="projects">
-    <h3 class="section-title" data-i18n="projects.title">Projects</h3>
+            <div class="glass-card p-8 md:col-span-1 rounded-2xl flex flex-col justify-center items-center text-center reveal">
+                <div class="text-3xl mb-2">🛸</div>
+                <div class="font-bold text-white">İHA-1 Pilotu</div>
+                <div class="text-xs text-slate-500 mt-1">SHGM Onaylı</div>
+            </div>
 
-    <div class="projects-grid">
-      <div class="project-card">
-        <h4>Digital Community Operations</h4>
-        <p data-i18n="projects.community">
-          Managing large online communities with structured operational processes.
-        </p>
-      </div>
+            <div class="glass-card p-8 md:col-span-4 rounded-2xl reveal">
+                <div class="text-cyan-400 text-sm mb-4">Kullandığım Araçlar & Yetkinlikler</div>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 bg-slate-800 rounded-lg text-sm border border-slate-700 text-slate-300">Sosyal Medya Kontrolü</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-lg text-sm border border-slate-700 text-slate-300">Müşteri Hizmetleri</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-lg text-sm border border-slate-700 text-slate-300">Topluluk Yönetimi</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-lg text-sm border border-slate-700 text-slate-300">Kriz Yönetimi</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-lg text-sm border border-slate-700 text-slate-300">3D Baskı</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-lg text-sm border border-slate-700 text-slate-300">Adobe Photoshop</span> 
+                    <span class="px-4 py-2 bg-slate-800 rounded-lg text-sm border border-slate-700 text-slate-300">Canva</span>               
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <div class="project-card">
-        <h4>3D Production & Technology</h4>
-        <p data-i18n="projects.3d">
-          3D printer operations and production-focused workflows.
-        </p>
-      </div>
-    </div>
-  </section>
+    <section class="py-20 px-8 md:px-20 max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12 flex items-center gap-4 reveal text-white">
+            <span class="w-12 h-1 bg-cyan-500"></span> Deneyim
+        </h2>
 
-  <!-- ================= CONTACT ================= -->
-  <section class="section contact" id="contact">
-    <h3 class="section-title" data-i18n="contact.title">Contact</h3>
+        <div class="relative border-l border-slate-800 ml-3 space-y-12">
+            
+            <div class="relative pl-12 reveal">
+                <div class="absolute -left-[9px] top-0 w-5 h-5 bg-cyan-500 rounded-full border-4 border-slate-900 shadow-[0_0_10px_rgba(34,211,238,0.5)]"></div>
+                <div class="text-sm text-cyan-400 font-mono mb-1">Mayıs 2019 – Kasım 2025</div>
+                <h3 class="text-2xl font-bold text-white">Community Manager</h3>
+                <h4 class="text-lg text-slate-400 mb-4">RED Games</h4>
+                <p class="text-slate-400 leading-relaxed mb-4">
+                    11.000+ üyeli dijital bir topluluğu 6 yıl boyunca başarıyla yönettim. Kriz anlarını çözüme kavuşturdum, yetkili ekipleri koordine ettim ve etkinliklerle topluluk bağlılığını artırdım.
+                </p>
+            </div>
 
-    <ul class="contact-list">
-      <li>Email: <a href="mailto:tunahan.kt74@gmail.com">tunahan.kt74@gmail.com</a></li>
-      <li>Location: Bartın, Turkey</li>
-    </ul>
-  </section>
+            <div class="relative pl-12 reveal">
+                <div class="absolute -left-[5px] top-2 w-3 h-3 bg-slate-600 rounded-full"></div>
+                <div class="text-sm text-slate-500 font-mono mb-1">Ekim 2023 – Şubat 2025</div>
+                <h3 class="text-xl font-bold text-white">Teknoloji & Sosyal Medya Sorumlusu</h3>
+                <h4 class="text-lg text-slate-400 mb-4">Aktıp Bartın Teknoloji A.Ş.</h4>
+                <p class="text-slate-400 leading-relaxed">
+                    Kurumsal sosyal medya hesaplarının yönetimi, 3D yazıcı ile model üretimi ve müşteri ilişkileri süreçlerini yürüttüm.
+                </p>
+            </div>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="footer">
-    <p>© 2025 Tunahan Küçükturgut</p>
-  </footer>
+            <div class="relative pl-12 reveal">
+                <div class="absolute -left-[5px] top-2 w-3 h-3 bg-slate-600 rounded-full"></div>
+                <div class="text-sm text-slate-500 font-mono mb-1">2021 - 2022</div>
+                <h3 class="text-xl font-bold text-white">Tasarım & Ağ Sistemleri</h3>
+                <h4 class="text-lg text-slate-400 mb-4">URL Medya & Aktıp Sağlık</h4>
+                <p class="text-slate-400 leading-relaxed">
+                    Web arayüz tasarımları, sosyal medya içerik üretimi ve ofis içi teknik ağ altyapı kurulumları gerçekleştirdim.
+                </p>
+            </div>
 
-  <!-- JS (AŞAMA 3'te doldurulacak) -->
-  <script src="script.js"></script>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-slate-600 border-t border-slate-800 mt-20">
+        <p>&copy; 2026 Tunahan Küçükturgut. Bartın, Türkiye.</p>
+        <p class="mt-2 text-sm">tunahan.kt74@gmail.com</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
