@@ -1,4 +1,4 @@
-/* --- GENEL AYARLAR --- */
+/* --- 1. GENEL AYARLAR --- */
 body, html {
     margin: 0;
     padding: 0;
@@ -14,19 +14,30 @@ body, html {
     overflow-x: hidden;
 }
 
-/* --- GİRİŞ EKRANI TASARIMI --- */
-#login-screen {
+/* --- 2. GİRİŞ EKRANI VE MODALLAR (ORTAK YAPILAR) --- */
+#login-screen, .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    /* Giriş ekranı için gradyan */
     background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
     transition: opacity 0.6s ease-out;
+}
+
+/* Gizli bölümler için arka plan biraz daha şeffaf olsun */
+.modal-overlay {
+    background: rgba(255, 240, 245, 0.95);
+    display: none; /* Başlangıçta gizli */
+    z-index: 3000;
+    padding: 20px;
+    box-sizing: border-box;
+    backdrop-filter: blur(5px);
 }
 
 .login-card {
@@ -38,15 +49,17 @@ body, html {
     width: 85%;
     max-width: 350px;
     backdrop-filter: blur(10px);
+    margin: auto; /* Ortalamayı garantiler */
 }
 
+/* İkon ve Başlıklar */
 .icon-area {
     font-size: 50px;
     margin-bottom: 10px;
     animation: heartbeat 1.5s infinite;
 }
 
-#login-screen h2 {
+h2 {
     margin: 10px 0 5px 0;
     font-weight: 600;
     color: #333;
@@ -59,7 +72,7 @@ body, html {
     margin-bottom: 25px;
 }
 
-/* Girdi Kutusu */
+/* Girdi Kutusu (Input) */
 .input-group input {
     width: 100%;
     padding: 12px;
@@ -81,31 +94,61 @@ body, html {
     box-shadow: 0 0 10px rgba(255, 154, 158, 0.2);
 }
 
-/* Buton */
-#login-screen button {
+/* --- 3. BUTON TASARIMLARI --- */
+
+/* Giriş ve Kilit Açma Butonları (Pembe/Mor) */
+.login-card button {
     width: 100%;
-    padding: 12px;
+    padding: 15px;
     margin-top: 20px;
     font-size: 16px;
     font-weight: 600;
     color: white;
-    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    background: linear-gradient(45deg, #f336c4, #cf5cc6); 
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(255, 154, 158, 0.3);
+    transition: all 0.3s ease;
 }
 
-#login-screen button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 154, 158, 0.4);
+.login-card button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 154, 158, 0.5);
+    background: linear-gradient(45deg, #ff8085, #f0df80);
 }
 
-#login-screen button:active {
+.login-card button:active {
     transform: scale(0.98);
 }
 
-#error-msg {
+/* "Bir gün beni özlersen" Butonu (Modern Soft) */
+.secret-btn {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    box-shadow: 0 10px 20px rgba(255, 154, 158, 0.3);
+    transition: all 0.3s ease;
+    opacity: 0.9;
+}
+
+.secret-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(255, 154, 158, 0.5);
+    opacity: 1;
+}
+
+/* Hata Mesajı */
+#error-msg, #secret-error-msg {
     color: #ff4757;
     margin-top: 15px;
     font-size: 13px;
@@ -113,16 +156,7 @@ body, html {
     display: none;
 }
 
-@keyframes heartbeat {
-    0% { transform: scale(1); }
-    10% { transform: scale(1.1); }
-    20% { transform: scale(1); }
-    30% { transform: scale(1.1); }
-    40% { transform: scale(1); }
-    100% { transform: scale(1); }
-}
-
-/* --- ANA İÇERİK --- */
+/* --- 4. ANA İÇERİK --- */
 #main-content {
     display: none;
     max-width: 900px;
@@ -139,7 +173,7 @@ h1 {
     margin-bottom: 30px;
     position: relative;
     display: inline-block;
-    font-size: 3rem; /* Sincap emojisi için büyük font */
+    font-size: 3rem;
 }
 
 /* Mektup Alanı */
@@ -158,14 +192,14 @@ p.letter {
 /* Fotoğraf Galerisi */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Mobilde daha çok sığsın diye küçülttüm */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 15px;
     margin-bottom: 50px;
 }
 
 .gallery img {
     width: 100%;
-    height: 250px; /* Kareye yakın görünüm */
+    height: 250px;
     object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -177,32 +211,25 @@ p.letter {
     z-index: 10;
 }
 
-/* --- VİDEO ALANI --- */
+/* --- 5. VİDEO ALANI --- */
 .video-container {
     margin-top: 40px;
     padding-bottom: 20px;
     text-align: center;
 }
 
-.video-container h2 {
-    font-weight: 600;
-    color: #444;
-    margin-bottom: 25px;
-}
-
-/* Videoları kapsayan kutu (Yan yana dizebilmek için) */
 .video-wrapper {
     display: flex;
-    flex-wrap: wrap; /* Sığmazsa alt satıra geç */
-    justify-content: center; /* Ortala */
-    gap: 20px; /* Videolar arası boşluk */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 video {
     width: 100%;
-    max-width: 45%; /* Bilgisayarda yan yana iki tane sığsın */
-    min-width: 300px; /* Mobilde çok küçülmesin */
-    height: 300px; /* Fotoğraflarla aynı yükseklik */
+    max-width: 45%; /* Bilgisayarda yan yana */
+    min-width: 300px;
+    height: 300px;
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(255, 105, 135, 0.3);
@@ -211,15 +238,10 @@ video {
     transition: transform 0.3s ease;
 }
 
-/* Mobilde videolar tek sütun olsun */
 @media (max-width: 768px) {
     video {
-        max-width: 100%; /* Mobilde tam genişlik */
+        max-width: 100%; /* Mobilde tam ekran */
     }
-}
-
-video:hover {
-    transform: scale(1.02);
 }
 
 .video-note {
@@ -229,61 +251,7 @@ video:hover {
     font-style: italic;
 }
 
-/* --- GİZLİ BÖLÜM STİLLERİ --- */
-
-/* Buton */
-.secret-btn {
-    background: transparent;
-    border: 2px solid #ff9a9e;
-    color: #ff9a9e;
-    padding: 12px 30px;
-    font-size: 14px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    transition: all 0.3s;
-    opacity: 0.8;
-}
-
-.secret-btn:hover {
-    background: #ff9a9e;
-    color: white;
-    opacity: 1;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 154, 158, 0.3);
-}
-
-/* Modal (Açılır Pencere) */
-.modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 240, 245, 0.95);
-    backdrop-filter: blur(5px);
-    z-index: 3000;
-    justify-content: center;
-    align-items: center;
-    padding: 20px; /* Telefondan kenarlara yapışmasın */
-    box-sizing: border-box;
-    animation: fadeIn 0.4s;
-}
-
-.close-modal {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 32px;
-    cursor: pointer;
-    color: #aaa;
-    transition: color 0.3s;
-    z-index: 3001;
-}
-.close-modal:hover { color: #ff6b6b; }
-
-/* Gizli Mesaj Kağıdı */
+/* --- 6. GİZLİ MEKTUP KAĞIDI --- */
 .secret-paper {
     background: #fff;
     width: 100%;
@@ -294,18 +262,25 @@ video:hover {
     border-left: 6px solid #ff9a9e;
     position: relative;
     text-align: left;
-    
-    /* Scroll Özellikleri */
-    max-height: 80vh; /* Ekranın %80'i kadar yükseklik */
-    overflow-y: auto; /* Yazı uzunsa kaydır */
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .secret-paper h2 {
     color: #ff9a9e;
-    margin-top: 0;
     font-size: 1.4rem;
-    margin-bottom: 20px;
 }
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    cursor: pointer;
+    color: #aaa;
+    z-index: 3001;
+}
+.close-modal:hover { color: #ff6b6b; }
 
 .scrollable-content p {
     line-height: 1.8;
@@ -314,16 +289,18 @@ video:hover {
     font-size: 0.95rem;
 }
 
-/* Scroll Çubuğu Tasarımı */
-.secret-paper::-webkit-scrollbar {
-    width: 6px;
-}
-.secret-paper::-webkit-scrollbar-thumb {
-    background-color: #ffb7b2;
-    border-radius: 4px;
-}
-.secret-paper::-webkit-scrollbar-track {
-    background: #f1f1f1;
+/* Scroll Çubuğu */
+.secret-paper::-webkit-scrollbar { width: 6px; }
+.secret-paper::-webkit-scrollbar-thumb { background-color: #ffb7b2; border-radius: 4px; }
+
+/* Animasyonlar */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    10% { transform: scale(1.1); }
+    20% { transform: scale(1); }
+    30% { transform: scale(1.1); }
+    40% { transform: scale(1); }
+    100% { transform: scale(1); }
 }
 
 @keyframes fadeIn {
