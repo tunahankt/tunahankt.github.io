@@ -1,88 +1,37 @@
-document.addEventListener('DOMContentLoaded', () => {
-    
-    const roles = ["Community Managerım", "Web Geliştiriciyim", "Tasarımcıyım", "3D Model Üreticisiyim"];
-    let roleIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    const typeTarget = document.getElementById('typewriter');
+function checkPassword() {
+    // HTML'den gerekli elemanları seçiyoruz
+    const input = document.getElementById('password').value;
+    const content = document.getElementById('main-content');
+    const loginScreen = document.getElementById('login-screen');
+    const errorMsg = document.getElementById('error-msg');
 
-    function type() {
-        const currentRole = roles[roleIndex];
+    // --- ŞİFREYİ BURADAN DEĞİŞTİR ---
+    // tırnak içindeki "1234" kısmını istediğin şifre yap.
+    const dogruSifre = "0709"; 
+
+    if (input === dogruSifre) {
+        // Şifre doğruysa:
         
-        if (isDeleting) {
-            typeTarget.textContent = currentRole.substring(0, charIndex - 1);
-            charIndex--;
-        } else {
-            typeTarget.textContent = currentRole.substring(0, charIndex + 1);
-            charIndex++;
-        }
-
-        if (!isDeleting && charIndex === currentRole.length) {
-            isDeleting = true;
-            setTimeout(type, 2000); 
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            roleIndex = (roleIndex + 1) % roles.length;
-            setTimeout(type, 500); 
-        } else {
-            setTimeout(type, isDeleting ? 50 : 100);
-        }
-    }
-
-    type();
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-});
-
-const contactBtn = document.getElementById('contact-btn');
-const originalText = contactBtn.innerText;
-
-contactBtn.addEventListener('click', (e) => {
-    navigator.clipboard.writeText('tunahan.kt74@gmail.com').then(() => {
+        // 1. Giriş ekranını yavaşça saydamlaştır
+        loginScreen.style.opacity = '0';
         
-        contactBtn.innerText = 'Mail Kopyalandı!';
-        contactBtn.classList.add('bg-cyan-500', 'text-white');
-        
+        // 2. Yarım saniye sonra giriş ekranını tamamen kaldır ve içeriği aç
         setTimeout(() => {
-            contactBtn.innerText = originalText;
-            contactBtn.classList.remove('bg-cyan-500', 'text-white');
-        }, 2000);
-
-    }).catch(err => {
-        console.error('Kopyalama hatası:', err);
-    });
-    
-});
-
-document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-});
-
-document.addEventListener('keydown', function(e) {
-    if(e.key === 'F12') {
-        e.preventDefault();
+            loginScreen.style.display = 'none';
+            content.style.display = 'block';
+            
+            // 3. İçeriği yavaşça görünür yap (fade-in efekti)
+            setTimeout(() => {
+                content.style.opacity = '1';
+            }, 50);
+        }, 500);
+        
+    } else {
+        // Şifre yanlışsa hata mesajını göster
+        errorMsg.style.display = 'block';
+        
+        // Hata mesajını biraz sallayabiliriz (opsiyonel basit animasyon)
+        const inputField = document.getElementById('password');
+        inputField.style.borderColor = "red";
     }
-    if(e.ctrlKey && e.shiftKey && e.key === 'I') {
-        e.preventDefault();
-    }
-    if(e.ctrlKey && e.shiftKey && e.key === 'J') {
-        e.preventDefault();
-    }
-    if(e.ctrlKey && e.key === 'u') {
-        e.preventDefault();
-    }
-    if(e.ctrlKey && e.key === 's') {
-        e.preventDefault();
-    }
-});
-document.addEventListener('selectstart', function(e) {
-    e.preventDefault();
-});
+}
