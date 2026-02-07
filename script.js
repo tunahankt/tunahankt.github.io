@@ -1,94 +1,110 @@
+/* --- 1. ANA GİRİŞ SİSTEMİ --- */
 function checkPassword() {
-    // HTML'den gerekli elemanları seçiyoruz
     const input = document.getElementById('password').value;
     const content = document.getElementById('main-content');
     const loginScreen = document.getElementById('login-screen');
     const errorMsg = document.getElementById('error-msg');
 
-    // --- ŞİFREYİ BURADAN DEĞİŞTİR ---
-    // tırnak içindeki "1234" kısmını istediğin şifre yap.
+    // --- ANA ŞİFRE ---
     const dogruSifre = "0709"; 
 
     if (input === dogruSifre) {
         // Şifre doğruysa:
         
-        // 1. Giriş ekranını yavaşça saydamlaştır
+        // Giriş ekranını yavaşça saydamlaştır
         loginScreen.style.opacity = '0';
         
-        // 2. Yarım saniye sonra giriş ekranını tamamen kaldır ve içeriği aç
+        // Yarım saniye sonra giriş ekranını tamamen kaldır ve içeriği aç
         setTimeout(() => {
             loginScreen.style.display = 'none';
             content.style.display = 'block';
             
-            // 3. İçeriği yavaşça görünür yap (fade-in efekti)
+            // İçeriği yavaşça görünür yap (fade-in efekti)
             setTimeout(() => {
                 content.style.opacity = '1';
             }, 50);
         }, 500);
         
     } else {
-        // Şifre yanlışsa hata mesajını göster
+        // Şifre yanlışsa
         errorMsg.style.display = 'block';
-        
-        // Hata mesajını biraz sallayabiliriz (opsiyonel basit animasyon)
         const inputField = document.getElementById('password');
         inputField.style.borderColor = "red";
     }
 }
 
-// --- AKILLI VİDEO OYNATICI ---
+/* --- 2. AKILLI VİDEO YÖNETİCİSİ (Çoklu Video Desteği) --- */
 document.addEventListener("DOMContentLoaded", function() {
-    const video = document.getElementById("ozurVideosu");
+    // Sayfadaki TÜM videoları seç
+    const videos = document.querySelectorAll('video');
 
-    // "Gözlemci" oluşturuyoruz
+    // Gözlemci (Observer) oluştur
     let observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            // Eğer video ekranda görünüyorsa (%50'si)
+            // Video ekrana girdiyse
             if (entry.isIntersecting) {
-                video.play().catch(error => {
-                    // Otomatik oynatma engellenirse sessizce geç
-                    console.log("Otomatik oynatma tarayıcı tarafından engellendi.");
+                // Videoyu oynatmayı dene
+                entry.target.play().catch(error => {
+                    console.log("Otomatik oynatma engellendi, kullanıcı tıklamalı.");
                 });
             } else {
-                // Video ekrandan çıktıysa durdur
-                video.pause();
+                // Video ekrandan çıktıysa DURDUR (Ses karışmaması için önemli)
+                entry.target.pause();
             }
         });
-    }, { threshold: 0.5 }); // Videonun yarısı görünce tetiklenir
+    }, { threshold: 0.5 }); // Videonun yarısı görünce işlem yap
 
-    observer.observe(video);
+    // Her bir videoyu gözlemciye ekle
+    videos.forEach(video => {
+        observer.observe(video);
+    });
+
+    // --- KLAVYE DESTEĞİ (ENTER TUŞU) ---
+    
+    // Ana şifre kutusunda Enter'a basınca giriş yap
+    document.getElementById("password").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            checkPassword();
+        }
+    });
+
+    // Gizli şifre kutusunda Enter'a basınca giriş yap
+    document.getElementById("secret-password").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            checkSecretPassword();
+        }
+    });
 });
 
-// --- GİZLİ BÖLÜM MANTIĞI ---
+/* --- 3. GİZLİ BÖLÜM MANTIĞI --- */
 
-// 1. Gizli şifre ekranını aç
+// Gizli şifre ekranını aç
 function openSecretLogin() {
     document.getElementById('secret-login-screen').style.display = 'flex';
 }
 
-// 2. Gizli şifre ekranını kapat (Vazgeçerse)
+// Gizli şifre ekranını kapat
 function closeSecretLogin() {
     document.getElementById('secret-login-screen').style.display = 'none';
 }
 
-// 3. Şifreyi Kontrol Et
+// Gizli Mesaj ekranını kapat
+function closeSecretContent() {
+    document.getElementById('secret-content-screen').style.display = 'none';
+}
+
+// Gizli Şifreyi Kontrol Et
 function checkSecretPassword() {
     const secretInput = document.getElementById('secret-password').value;
     const errorMsg = document.getElementById('secret-error-msg');
     
-    // --- İKİNCİ ŞİFREYİ BURAYA YAZ ---
+    // --- GİZLİ ŞİFRE ---
     const gizliSifre = "bıdıkvecıvık"; 
 
     if (secretInput === gizliSifre) {
-        // Doğruysa şifre ekranını kapat, mesajı aç
         document.getElementById('secret-login-screen').style.display = 'none';
         document.getElementById('secret-content-screen').style.display = 'flex';
     } else {
         errorMsg.style.display = 'block';
     }
-}
-
-// 4. Mesaj ekranını kapat
-function closeSecretContent() {
-    document.getElementById('secret-content-screen').style.display = 'none';
 }

@@ -1,27 +1,26 @@
+/* --- GENEL AYARLAR --- */
 body, html {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
     height: 100%;
-    /* YENİ ARKA PLAN GÖRSELİ */
-    background-image: url('arkaplan.png'); /* Kaydettiğin görselin adı */
-    background-size: cover; /* Görseli ekrana yayar */
-    background-position: center; /* Görseli ortalar */
-    background-repeat: no-repeat; /* Görselin tekrar etmesini önler */
-    background-attachment: fixed; /* Kaydırınca arka plan sabit kalır */
+    /* ARKA PLAN */
+    background-image: url('arkaplan.png'); /* Görsel adı */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: #4a4a4a;
     overflow-x: hidden;
 }
 
-
-/* --- GİRİŞ EKRANI TASARIMI (YENİ) --- */
+/* --- GİRİŞ EKRANI TASARIMI --- */
 #login-screen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* Modern Gradyan Arka Plan */
     background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
     display: flex;
     justify-content: center;
@@ -31,16 +30,14 @@ body, html {
 }
 
 .login-card {
-    background: rgba(255, 255, 255, 0.9); /* Yarı saydam beyaz */
-    padding: 50px 40px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px 30px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(255, 105, 135, 0.3); /* Pembe gölge */
+    box-shadow: 0 10px 30px rgba(255, 105, 135, 0.3);
     text-align: center;
-    width: 90%;
-    max-width: 400px;
-    backdrop-filter: blur(10px); /* Buzlu cam efekti */
-    transform: translateY(0);
-    transition: transform 0.3s;
+    width: 85%;
+    max-width: 350px;
+    backdrop-filter: blur(10px);
 }
 
 .icon-area {
@@ -53,27 +50,28 @@ body, html {
     margin: 10px 0 5px 0;
     font-weight: 600;
     color: #333;
+    font-size: 1.5rem;
 }
 
 .subtitle {
     font-size: 14px;
     color: #888;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 /* Girdi Kutusu */
 .input-group input {
     width: 100%;
-    padding: 15px;
+    padding: 12px;
     font-size: 16px;
     border: 2px solid #eee;
     background-color: #f9f9f9;
     border-radius: 12px;
     outline: none;
-    box-sizing: border-box; /* Padding taşmasını engeller */
+    box-sizing: border-box;
     transition: all 0.3s;
     text-align: center;
-    letter-spacing: 2px; /* Şifre noktaları arası boşluk */
+    letter-spacing: 3px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -86,7 +84,7 @@ body, html {
 /* Buton */
 #login-screen button {
     width: 100%;
-    padding: 15px;
+    padding: 12px;
     margin-top: 20px;
     font-size: 16px;
     font-weight: 600;
@@ -115,7 +113,6 @@ body, html {
     display: none;
 }
 
-/* Kalp Atışı Animasyonu */
 @keyframes heartbeat {
     0% { transform: scale(1); }
     10% { transform: scale(1.1); }
@@ -125,13 +122,12 @@ body, html {
     100% { transform: scale(1); }
 }
 
-
-/* --- ANA İÇERİK (MEKTUP) --- */
+/* --- ANA İÇERİK --- */
 #main-content {
     display: none;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 60px 20px;
+    padding: 40px 20px;
     text-align: center;
     opacity: 0;
     transition: opacity 1s ease;
@@ -140,113 +136,113 @@ body, html {
 h1 {
     font-weight: 600;
     color: #444;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     position: relative;
     display: inline-block;
+    font-size: 3rem; /* Sincap emojisi için büyük font */
 }
 
-/* Başlık altı çizgisi */
-h1::after {
-    content: '';
-    display: block;
-    width: 50%;
-    height: 3px;
-    background: #ff9a9e;
-    margin: 10px auto 0;
-    border-radius: 2px;
-}
-
+/* Mektup Alanı */
 p.letter {
-    font-size: 1.15rem;
-    line-height: 1.8;
+    font-size: 1.1rem;
+    line-height: 1.7;
     color: #555;
-    background: white;
-    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     white-space: pre-line;
 }
 
-/* Galeri */
+/* Fotoğraf Galerisi */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Mobilde daha çok sığsın diye küçülttüm */
+    gap: 15px;
+    margin-bottom: 50px;
 }
 
 .gallery img {
     width: 100%;
-    height: 300px;
+    height: 250px; /* Kareye yakın görünüm */
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.4s, filter 0.4s;
+    transition: transform 0.3s;
 }
 
 .gallery img:hover {
-    transform: scale(1.03);
-    filter: brightness(1.1);
+    transform: scale(1.05);
+    z-index: 10;
 }
 
-/* --- VİDEO ALANI TASARIMI (YENİ HALİ) --- */
+/* --- VİDEO ALANI --- */
 .video-container {
-    margin-top: 60px;
-    padding-bottom: 40px;
+    margin-top: 40px;
+    padding-bottom: 20px;
     text-align: center;
-    /* Videoyu ortalamak için ekstra ayar */
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
 }
 
 .video-container h2 {
     font-weight: 600;
     color: #444;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+/* Videoları kapsayan kutu (Yan yana dizebilmek için) */
+.video-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Sığmazsa alt satıra geç */
+    justify-content: center; /* Ortala */
+    gap: 20px; /* Videolar arası boşluk */
 }
 
 video {
     width: 100%;
-    /* Fotoğraflarla uyum için maksimum genişliği daralttık */
-    max-width: 500px; 
-    /* --- KRİTİK AYARLAR BURADA --- */
-    height: 300px; /* Fotoğraflarla aynı sabit yükseklik */
-    object-fit: cover; /* Görüntüyü bozmadan kutuyu doldur */
-    border-radius: 15px; /* Fotoğraflarla aynı köşe yuvarlaklığı */
-    /* --------------------------- */
-    box-shadow: 0 15px 35px rgba(255, 105, 135, 0.4);
-    border: 5px solid #fff;
+    max-width: 45%; /* Bilgisayarda yan yana iki tane sığsın */
+    min-width: 300px; /* Mobilde çok küçülmesin */
+    height: 300px; /* Fotoğraflarla aynı yükseklik */
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(255, 105, 135, 0.3);
+    border: 4px solid #fff;
     background-color: #000;
-    cursor: pointer;
     transition: transform 0.3s ease;
 }
 
+/* Mobilde videolar tek sütun olsun */
+@media (max-width: 768px) {
+    video {
+        max-width: 100%; /* Mobilde tam genişlik */
+    }
+}
+
 video:hover {
-    transform: scale(1.01);
+    transform: scale(1.02);
 }
 
 .video-note {
     margin-top: 15px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #888;
     font-style: italic;
 }
 
 /* --- GİZLİ BÖLÜM STİLLERİ --- */
 
-/* "Bir gün beni özlersen" butonu */
+/* Buton */
 .secret-btn {
     background: transparent;
     border: 2px solid #ff9a9e;
     color: #ff9a9e;
-    padding: 10px 25px;
+    padding: 12px 30px;
     font-size: 14px;
-    border-radius: 25px;
+    border-radius: 30px;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
     transition: all 0.3s;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 .secret-btn:hover {
@@ -254,86 +250,83 @@ video:hover {
     color: white;
     opacity: 1;
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 154, 158, 0.3);
 }
 
-/* Modal Arka Planı (Karartma) */
+/* Modal (Açılır Pencere) */
 .modal-overlay {
-    display: none; /* Başlangıçta gizli */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 240, 245, 0.95); /* Çok açık pembe yarı saydam */
+    background: rgba(255, 240, 245, 0.95);
     backdrop-filter: blur(5px);
-    z-index: 3000; /* En üstte */
+    z-index: 3000;
     justify-content: center;
     align-items: center;
-    animation: fadeIn 0.5s;
+    padding: 20px; /* Telefondan kenarlara yapışmasın */
+    box-sizing: border-box;
+    animation: fadeIn 0.4s;
 }
 
-/* Kapatma Çarpısı */
 .close-modal {
     position: absolute;
     top: 15px;
     right: 20px;
-    font-size: 30px;
+    font-size: 32px;
     cursor: pointer;
     color: #aaa;
+    transition: color 0.3s;
+    z-index: 3001;
 }
 .close-modal:hover { color: #ff6b6b; }
 
-/* Gizli Mesaj Kağıdı Tasarımı */
+/* Gizli Mesaj Kağıdı */
 .secret-paper {
     background: #fff;
-    width: 90%;
+    width: 100%;
     max-width: 500px;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border-left: 5px solid #ff9a9e;
+    padding: 30px 25px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    border-left: 6px solid #ff9a9e;
     position: relative;
     text-align: left;
+    
+    /* Scroll Özellikleri */
+    max-height: 80vh; /* Ekranın %80'i kadar yükseklik */
+    overflow-y: auto; /* Yazı uzunsa kaydır */
 }
 
 .secret-paper h2 {
     color: #ff9a9e;
     margin-top: 0;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
 }
 
-.secret-paper p {
+.scrollable-content p {
     line-height: 1.8;
     color: #555;
-    white-space: pre-line;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Gizli Mesaj Kağıdı Tasarımı (GÜNCELLENMİŞ) */
-.secret-paper {
-    background: #fff;
-    width: 90%;
-    max-width: 500px;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    border-left: 5px solid #ff9a9e;
-    position: relative;
-    text-align: left;
-    
-    /* --- EKLENEN KISIM: SCROLL ÖZELLİĞİ --- */
-    max-height: 80vh; /* Ekranın %80'inden uzun olmasın */
-    overflow-y: auto; /* Yazı taşarsa kaydırma çubuğu çıksın */
-}
-
-/* Scroll çubuğunu güzelleştirelim (Opsiyonel) */
+/* Scroll Çubuğu Tasarımı */
 .secret-paper::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
 }
 .secret-paper::-webkit-scrollbar-thumb {
     background-color: #ffb7b2;
     border-radius: 4px;
+}
+.secret-paper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

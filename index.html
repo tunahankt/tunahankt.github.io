@@ -2,9 +2,8 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Özür dilerim</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Özür Dilerim</title>
+    <link href="[https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap)" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,6 +12,7 @@
         <div class="login-card">
             <div class="icon-area">❤️</div>
             <h2>Seni çok seviyorum</h2>
+            <p class="subtitle">Lütfen şifreyi gir</p>
             
             <div class="input-group">
                 <input type="password" id="password" placeholder="Şifre" />
@@ -53,30 +53,30 @@
             <img src="foto_13.JPEG" alt="Anılar">   
             <img src="foto_14.JPEG" alt="Anılar">                                     
             <img src="foto_15.JPEG" alt="Anılar">  
-
         </div>
-        </div> 
 
         <div class="video-container">
             <h2>Ketçaplı pilav..</h2>
             
-            <video id="ozurVideosu" width="100%" muted playsinline controls>
-                <source src="video1.mp4" type="video/mp4">
-            </video>
+            <div class="video-wrapper">
+                <video controls playsinline muted>
+                    <source src="video1.mp4" type="video/mp4">
+                    Tarayıcın bu videoyu desteklemiyor.
+                </video>
 
-            <video id="ozurVideosu" width="100%" muted playsinline controls>
-                <source src="video2.MP4" type="video/mp4">
-            </video>        
+                <video controls playsinline muted>
+                    <source src="video2.MP4" type="video/mp4">
+                    Tarayıcın bu videoyu desteklemiyor.
+                </video>        
+            </div>
+            <p class="video-note">Videoları izlemek için üzerine tıklayabilirsin.</p>
         </div>
-        </div> ```
 
+        <div style="text-align: center; margin-top: 80px; margin-bottom: 50px;">
+            <button class="secret-btn" onclick="openSecretLogin()">Bir gün bizi özlersen...</button>
+        </div>
 
-    </div>
-
-    <div style="text-align: center; margin-top: 100px; margin-bottom: 50px;">
-        <button class="secret-btn" onclick="openSecretLogin()">Bir gün bizi özlersen...</button>
-    </div>
-
+    </div> 
     <div id="secret-login-screen" class="modal-overlay">
         <div class="login-card">
             <span class="close-modal" onclick="closeSecretLogin()">&times;</span>
@@ -92,10 +92,11 @@
         </div>
     </div>
 
-<div id="secret-content-screen" class="modal-overlay">
+    <div id="secret-content-screen" class="modal-overlay">
         <div class="secret-paper">
             <span class="close-modal" onclick="closeSecretContent()">&times;</span>
             <h2>Ben bir eşşeğim özür dilerim.</h2>
+            
             <div class="scrollable-content">
                 <p>
                     Yıllar sonra gerçekten sevildiğimi, doğru insanla beraber olduğumu ve yaşadığımı hissettirdiğin için binlerce kez teşekkür ederim. Hep sana layık bir sevgili olmaya çalışsam da, sen benden kat kat üstün olduğun için beceremedim; hata üstüne hata yaptım. En sonunda da beni gerçekten tüm kalbiyle sevdiğine inandığım seni, evimi kaybettim.
