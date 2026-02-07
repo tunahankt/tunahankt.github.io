@@ -35,3 +35,26 @@ function checkPassword() {
         inputField.style.borderColor = "red";
     }
 }
+
+// --- AKILLI VİDEO OYNATICI ---
+document.addEventListener("DOMContentLoaded", function() {
+    const video = document.getElementById("ozurVideosu");
+
+    // "Gözlemci" oluşturuyoruz
+    let observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            // Eğer video ekranda görünüyorsa (%50'si)
+            if (entry.isIntersecting) {
+                video.play().catch(error => {
+                    // Otomatik oynatma engellenirse sessizce geç
+                    console.log("Otomatik oynatma tarayıcı tarafından engellendi.");
+                });
+            } else {
+                // Video ekrandan çıktıysa durdur
+                video.pause();
+            }
+        });
+    }, { threshold: 0.5 }); // Videonun yarısı görünce tetiklenir
+
+    observer.observe(video);
+});
