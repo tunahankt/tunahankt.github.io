@@ -73,6 +73,54 @@
 
     </div>
 
+    <div style="text-align: center; margin-top: 100px; margin-bottom: 50px;">
+        <button class="secret-btn" onclick="openSecretLogin()">Bir gün bizi özlersen...</button>
+    </div>
+
+    <div id="secret-login-screen" class="modal-overlay">
+        <div class="login-card">
+            <span class="close-modal" onclick="closeSecretLogin()">&times;</span>
+            <div class="icon-area">🔐</div>
+            <p class="subtitle">Bu kapıyı açmak için diğer şifreyi gir.</p>
+            
+            <div class="input-group">
+                <input type="password" id="secret-password" placeholder="Özel Şifre" />
+            </div>
+            
+            <button onclick="checkSecretPassword()">Kilidi Aç</button>
+            <p id="secret-error-msg" style="display:none; color:red; margin-top:10px;">Yanlış anahtar.</p>
+        </div>
+    </div>
+
+<div id="secret-content-screen" class="modal-overlay">
+        <div class="secret-paper">
+            <span class="close-modal" onclick="closeSecretContent()">&times;</span>
+            <h2>Ben bir eşşeğim özür dilerim.</h2>
+            <div class="scrollable-content">
+                <p>
+                    Yıllar sonra gerçekten sevildiğimi, doğru insanla beraber olduğumu ve yaşadığımı hissettirdiğin için binlerce kez teşekkür ederim. Hep sana layık bir sevgili olmaya çalışsam da, sen benden kat kat üstün olduğun için beceremedim; hata üstüne hata yaptım. En sonunda da beni gerçekten tüm kalbiyle sevdiğine inandığım seni, evimi kaybettim.
+                </p>
+                <p>
+                    Benim için bunları yazmak fazlasıyla can acıtıcı, bir o kadar da üzücü. Keşke her şeyin farklı olduğu bir zamanda hayatlarımızı birleştirebilseydik, keşke bu kadar aptal olmasaydım.
+                </p>
+                <p>
+                    Bana yaşattığın ilkleri hiçbir zaman unutmayacağım ve seni hep en güzel halimizle; Cıvığımızı aldığımız günkü heyecanımızla, mutfakta ensemi öpmenle, donumu indirmenle (!), Uno'da attığın +4'ler, çakma monopoly'mizde taktığın kiralarla, buz pateni için darlayıp bana yaşattığın ölüm tehlikesiyle, dans ettirmeye çalışıp başımı döndürmenle, bana hep aşkla baktığın o gözlerle hatırlayacağım.
+                </p>
+                <p>
+                    İlişkimiz keşke "iyi ki"lerden "keşke"lere dönmeseydi. Keşke hep o aşk dolu gözlerinde kaybolsaydım, saatlerce bir hayran gibi seni izleseydim. Keşke hep kucağımda huzurla uyuyup beni dünyanın en mutlu adamı yapmaya devam etseydin. Keşke aşkın affedebileceği hatalarım olsaydı... Elimizden tüm bunları aldığım için üzgünüm sevgilim, çok üzgünüm. Umarım bir gün beni affedebilirsin. Çocuklarımız sana emanet (zaten her şeylerini sen yapıyordun).
+                </p>
+                <p>
+                    Bir gün sana tekrar labneli yumurta, kuymak, menemen ve patatesli yumurta yapmak dileğimle...
+                </p>
+                <br>
+                <p style="text-align: right; font-style: italic;">
+                    Seni her zaman seven, sevecek ve bekleyecek sevgilinden, biricik sincabına.<br>
+                    <strong style="color: #ff9a9e;">07.09.2025 - ∞</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -232,3 +232,108 @@ video:hover {
     color: #888;
     font-style: italic;
 }
+
+/* --- GİZLİ BÖLÜM STİLLERİ --- */
+
+/* "Bir gün beni özlersen" butonu */
+.secret-btn {
+    background: transparent;
+    border: 2px solid #ff9a9e;
+    color: #ff9a9e;
+    padding: 10px 25px;
+    font-size: 14px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s;
+    opacity: 0.7;
+}
+
+.secret-btn:hover {
+    background: #ff9a9e;
+    color: white;
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* Modal Arka Planı (Karartma) */
+.modal-overlay {
+    display: none; /* Başlangıçta gizli */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 240, 245, 0.95); /* Çok açık pembe yarı saydam */
+    backdrop-filter: blur(5px);
+    z-index: 3000; /* En üstte */
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s;
+}
+
+/* Kapatma Çarpısı */
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #aaa;
+}
+.close-modal:hover { color: #ff6b6b; }
+
+/* Gizli Mesaj Kağıdı Tasarımı */
+.secret-paper {
+    background: #fff;
+    width: 90%;
+    max-width: 500px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-left: 5px solid #ff9a9e;
+    position: relative;
+    text-align: left;
+}
+
+.secret-paper h2 {
+    color: #ff9a9e;
+    margin-top: 0;
+}
+
+.secret-paper p {
+    line-height: 1.8;
+    color: #555;
+    white-space: pre-line;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Gizli Mesaj Kağıdı Tasarımı (GÜNCELLENMİŞ) */
+.secret-paper {
+    background: #fff;
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border-left: 5px solid #ff9a9e;
+    position: relative;
+    text-align: left;
+    
+    /* --- EKLENEN KISIM: SCROLL ÖZELLİĞİ --- */
+    max-height: 80vh; /* Ekranın %80'inden uzun olmasın */
+    overflow-y: auto; /* Yazı taşarsa kaydırma çubuğu çıksın */
+}
+
+/* Scroll çubuğunu güzelleştirelim (Opsiyonel) */
+.secret-paper::-webkit-scrollbar {
+    width: 8px;
+}
+.secret-paper::-webkit-scrollbar-thumb {
+    background-color: #ffb7b2;
+    border-radius: 4px;
+}

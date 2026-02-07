@@ -58,3 +58,37 @@ document.addEventListener("DOMContentLoaded", function() {
 
     observer.observe(video);
 });
+
+// --- GİZLİ BÖLÜM MANTIĞI ---
+
+// 1. Gizli şifre ekranını aç
+function openSecretLogin() {
+    document.getElementById('secret-login-screen').style.display = 'flex';
+}
+
+// 2. Gizli şifre ekranını kapat (Vazgeçerse)
+function closeSecretLogin() {
+    document.getElementById('secret-login-screen').style.display = 'none';
+}
+
+// 3. Şifreyi Kontrol Et
+function checkSecretPassword() {
+    const secretInput = document.getElementById('secret-password').value;
+    const errorMsg = document.getElementById('secret-error-msg');
+    
+    // --- İKİNCİ ŞİFREYİ BURAYA YAZ ---
+    const gizliSifre = "bıdıkvecıvık"; 
+
+    if (secretInput === gizliSifre) {
+        // Doğruysa şifre ekranını kapat, mesajı aç
+        document.getElementById('secret-login-screen').style.display = 'none';
+        document.getElementById('secret-content-screen').style.display = 'flex';
+    } else {
+        errorMsg.style.display = 'block';
+    }
+}
+
+// 4. Mesaj ekranını kapat
+function closeSecretContent() {
+    document.getElementById('secret-content-screen').style.display = 'none';
+}
