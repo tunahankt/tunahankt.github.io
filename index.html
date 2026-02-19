@@ -8,24 +8,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header class="navbar">
         <div class="logo">T.<span>OTO</span> YIKAMA</div>
-        
         <nav class="nav-links">
             <a href="#hizmetler">Hizmetlerimiz</a>
             <a href="#randevu">Randevu Al</a>
             <a href="#iletisim">İletişim</a>
         </nav>
-        
         <a href="#randevu" class="btn-outline desktop-btn">Randevu Al</a>
-
         <div class="hamburger">
             <div class="line1"></div>
             <div class="line2"></div>
@@ -47,20 +42,17 @@
     <section id="hizmetler" class="services-section">
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Neler <span>Yapıyoruz?</span></h2>
-            
             <div class="services-grid">
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="icon">💧</div>
                     <h3>İç & Dış Yıkama</h3>
                     <p>Kusursuz köpük, fırçasız temizlik ve detaylı iç vakumlama ile günlük parlaklık ve ferahlık.</p>
                 </div>
-                
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="icon">✨</div>
                     <h3>Detaylı Temizlik</h3>
                     <p>Koltuk, tavan ve taban dezenfeksiyonu ile aracınızda ilk günkü temizliği ve hijyeni yakalayın.</p>
                 </div>
-                
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="icon">🛡️</div>
                     <h3>Seramik & Boya Koruma</h3>
@@ -82,7 +74,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <input type="tel" id="telefon" placeholder="Telefon Numaranız" required>
+                        <input type="tel" id="telefon" placeholder="Telefon (Örn: 0555 123 45 67)" required>
                     </div>
 
                     <div class="form-group">
@@ -102,8 +94,14 @@
                         </select>
                     </div>
                     
-                    <div class="form-group full-width">
+                    <div class="form-group">
                         <input type="date" id="tarih" required>
+                    </div>
+
+                    <div class="form-group">
+                        <select id="saat" required>
+                            <option value="" disabled selected>Saat Seçiniz</option>
+                            </select>
                     </div>
                     
                     <div class="form-group full-width">
@@ -117,12 +115,10 @@
 
     <footer id="iletisim" class="footer-section">
         <div class="container footer-grid">
-            
             <div class="footer-brand">
                 <div class="logo">T.<span>OTO</span> YIKAMA</div>
                 <p class="footer-desc">Aracınız için en ince detayına kadar düşünülmüş premium temizlik ve koruma hizmetleri.</p>
             </div>
-
             <div class="footer-links">
                 <h4>Hızlı Menü</h4>
                 <ul>
@@ -130,14 +126,12 @@
                     <li><a href="#randevu">Randevu Al</a></li>
                 </ul>
             </div>
-
             <div class="footer-contact">
                 <h4>İletişim</h4>
                 <p>📍 Merkez / Bartın</p>
                 <p>📞 +90 (555) 000 00 00</p>
                 <p>✉️ info@totoyikama.com</p>
             </div>
-
             <div class="footer-social">
                 <h4>Bizi Takip Edin</h4>
                 <div class="social-icons">
@@ -145,9 +139,7 @@
                     <a href="#">WhatsApp</a>
                 </div>
             </div>
-
         </div>
-        
         <div class="footer-bottom">
             <p>&copy; 2026 T.OTO Yıkama. Tüm hakları saklıdır.</p>
         </div>
