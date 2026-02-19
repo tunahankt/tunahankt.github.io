@@ -1,309 +1,157 @@
-/* --- 1. GENEL AYARLAR --- */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    height: 100%;
-    /* ARKA PLAN */
-    background-image: url('arkaplan.png'); /* Görsel adı */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: #4a4a4a;
-    overflow-x: hidden;
+/* --- TEMEL DEĞİŞKENLER (Renk Paleti) --- */
+:root {
+    --bg-dark: #0a0b10;          /* Koyu antrasit arka plan */
+    --nav-bg: rgba(10, 11, 16, 0.85); /* Yarı saydam menü */
+    --text-light: #ffffff;       /* Ana metin rengi */
+    --text-muted: #a0aab2;       /* Alt metin rengi */
+    --accent: #00d2ff;           /* Elektrik mavisi vurgu */
+    --accent-hover: #0099cc;     /* Buton üzerine gelinceki renk */
+    --font-heading: 'Poppins', sans-serif;
+    --font-text: 'Inter', sans-serif;
 }
 
-/* --- 2. GİRİŞ EKRANI VE MODALLAR (ORTAK YAPILAR) --- */
-#login-screen, .modal-overlay {
+/* --- SIFIRLAMA VE GENEL AYARLAR --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-text);
+    line-height: 1.6;
+}
+
+/* --- ÜST MENÜ (NAVBAR) --- */
+.navbar {
     position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(10px); /* Arka planı bulanıklaştırma efekti */
+    z-index: 1000;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* --- BUTONLAR --- */
+.btn-primary, .btn-outline {
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: var(--bg-dark);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+}
+
+.btn-outline:hover {
+    background-color: var(--accent);
+    color: var(--bg-dark);
+}
+
+/* --- ANA EKRAN (HERO) --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    /* Aşağıdaki URL kısmına şık bir araç veya detailing görseli linki koyabilirsin */
+    background: url('https://images.unsplash.com/photo-1601362840469-51e4d8d58785?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+}
+
+.hero-overlay {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* Giriş ekranı için gradyan */
-    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    transition: opacity 0.6s ease-out;
+    background: linear-gradient(to bottom, rgba(10, 11, 16, 0.7), rgba(10, 11, 16, 0.95));
 }
 
-/* Gizli bölümler için arka plan biraz daha şeffaf olsun */
-.modal-overlay {
-    background: rgba(255, 240, 245, 0.95);
-    display: none; /* Başlangıçta gizli */
-    z-index: 3000;
-    padding: 20px;
-    box-sizing: border-box;
-    backdrop-filter: blur(5px);
-}
-
-.login-card {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 40px 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(255, 105, 135, 0.3);
-    text-align: center;
-    width: 85%;
-    max-width: 350px;
-    backdrop-filter: blur(10px);
-    margin: auto; /* Ortalamayı garantiler */
-}
-
-/* İkon ve Başlıklar */
-.icon-area {
-    font-size: 50px;
-    margin-bottom: 10px;
-    animation: heartbeat 1.5s infinite;
-}
-
-h2 {
-    margin: 10px 0 5px 0;
-    font-weight: 600;
-    color: #333;
-    font-size: 1.5rem;
-}
-
-.subtitle {
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 25px;
-}
-
-/* Girdi Kutusu (Input) */
-.input-group input {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    border: 2px solid #eee;
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    outline: none;
-    box-sizing: border-box;
-    transition: all 0.3s;
-    text-align: center;
-    letter-spacing: 3px;
-    font-family: 'Poppins', sans-serif;
-}
-
-.input-group input:focus {
-    border-color: #ff9a9e;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(255, 154, 158, 0.2);
-}
-
-/* --- 3. BUTON TASARIMLARI --- */
-
-/* Giriş ve Kilit Açma Butonları (Pembe/Mor) */
-.login-card button {
-    width: 100%;
-    padding: 15px;
-    margin-top: 20px;
-    font-size: 16px;
-    font-weight: 600;
-    color: white;
-    background: linear-gradient(45deg, #f336c4, #cf5cc6); 
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 1px;
-    box-shadow: 0 5px 15px rgba(255, 154, 158, 0.3);
-    transition: all 0.3s ease;
-}
-
-.login-card button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255, 154, 158, 0.5);
-    background: linear-gradient(45deg, #ff8085, #f0df80);
-}
-
-.login-card button:active {
-    transform: scale(0.98);
-}
-
-/* "Bir gün beni özlersen" Butonu (Modern Soft) */
-.secret-btn {
-    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
-    color: white;
-    border: none;
-    padding: 15px 40px;
-    font-size: 14px;
-    letter-spacing: 1px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    box-shadow: 0 10px 20px rgba(255, 154, 158, 0.3);
-    transition: all 0.3s ease;
-    opacity: 0.9;
-}
-
-.secret-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 25px rgba(255, 154, 158, 0.5);
-    opacity: 1;
-}
-
-/* Hata Mesajı */
-#error-msg, #secret-error-msg {
-    color: #ff4757;
-    margin-top: 15px;
-    font-size: 13px;
-    font-weight: 500;
-    display: none;
-}
-
-/* --- 4. ANA İÇERİK --- */
-#main-content {
-    display: none;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 1s ease;
-}
-
-h1 {
-    font-weight: 600;
-    color: #444;
-    margin-bottom: 30px;
+.hero-content {
     position: relative;
-    display: inline-block;
-    font-size: 3rem;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 20px;
 }
 
-/* Mektup Alanı */
-p.letter {
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.highlight {
+    color: var(--accent);
+}
+
+.hero-content p {
     font-size: 1.1rem;
-    line-height: 1.7;
-    color: #555;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    color: var(--text-muted);
     margin-bottom: 40px;
-    white-space: pre-line;
 }
 
-/* Fotoğraf Galerisi */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-    margin-bottom: 50px;
-}
-
-.gallery img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-}
-
-.gallery img:hover {
-    transform: scale(1.05);
-    z-index: 10;
-}
-
-/* --- 5. VİDEO ALANI --- */
-.video-container {
-    margin-top: 40px;
-    padding-bottom: 20px;
-    text-align: center;
-}
-
-.video-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-video {
-    width: 100%;
-    max-width: 45%; /* Bilgisayarda yan yana */
-    min-width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(255, 105, 135, 0.3);
-    border: 4px solid #fff;
-    background-color: #000;
-    transition: transform 0.3s ease;
-}
-
+/* --- MOBİL UYUM (RESPONSIVE) --- */
 @media (max-width: 768px) {
-    video {
-        max-width: 100%; /* Mobilde tam ekran */
+    .nav-links {
+        display: none; /* Mobilde menüyü şimdilik gizliyoruz, hamburger menü ekleyeceğiz */
     }
-}
-
-.video-note {
-    margin-top: 15px;
-    font-size: 0.85rem;
-    color: #888;
-    font-style: italic;
-}
-
-/* --- 6. GİZLİ MEKTUP KAĞIDI --- */
-.secret-paper {
-    background: #fff;
-    width: 100%;
-    max-width: 500px;
-    padding: 30px 25px;
-    border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    border-left: 6px solid #ff9a9e;
-    position: relative;
-    text-align: left;
-    max-height: 80vh;
-    overflow-y: auto;
-}
-
-.secret-paper h2 {
-    color: #ff9a9e;
-    font-size: 1.4rem;
-}
-
-.close-modal {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 32px;
-    cursor: pointer;
-    color: #aaa;
-    z-index: 3001;
-}
-.close-modal:hover { color: #ff6b6b; }
-
-.scrollable-content p {
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 15px;
-    font-size: 0.95rem;
-}
-
-/* Scroll Çubuğu */
-.secret-paper::-webkit-scrollbar { width: 6px; }
-.secret-paper::-webkit-scrollbar-thumb { background-color: #ffb7b2; border-radius: 4px; }
-
-/* Animasyonlar */
-@keyframes heartbeat {
-    0% { transform: scale(1); }
-    10% { transform: scale(1.1); }
-    20% { transform: scale(1); }
-    30% { transform: scale(1.1); }
-    40% { transform: scale(1); }
-    100% { transform: scale(1); }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
 }

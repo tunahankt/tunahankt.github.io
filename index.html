@@ -2,126 +2,38 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Özür Dilerim</title>
-    <link href="[https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap)" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Car Wash & Detailing</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="login-screen">
-        <div class="login-card">
-            <div class="icon-area">❤️</div>
-            <h2>Seni çok seviyorum</h2>
-            <p class="subtitle">Lütfen şifreyi gir</p>
-            
-            <div class="input-group">
-                <input type="password" id="password" placeholder="Şifre" />
-            </div>
-            
-            <button onclick="checkPassword()">Giriş Yap</button>
-            <p id="error-msg">Şifre yanlış, tekrar dene lütfen.</p>
-        </div>
-    </div>
+    <header class="navbar">
+        <div class="logo">BARTIN<span>DETAILING</span></div>
+        <nav class="nav-links">
+            <a href="#hizmetler">Hizmetlerimiz</a>
+            <a href="#surec">Nasıl Çalışır?</a>
+            <a href="#iletisim">İletişim</a>
+        </nav>
+        <a href="#randevu" class="btn-outline">Randevu Al</a>
+    </header>
 
-    <div id="main-content">
-        <h1>🐿</h1>
+    <section class="hero">
+        <div class="hero-overlay"></div>
         
-        <p class="letter">
-            Seni her şeyden çok seviyorum.
-            Hatalarım için ölümüne pişmanım.
-            Umarım bir gün beni affedebilirsin.
-            
-            Seninle olan anılarımız benim için her şeyden değerli.
-            Bu siteyi sadece sana olan sevgimi ve pişmanlığımı göstermek ve anılarımızı saklamak için yaptım.
-            
-            Seni çok seviyorum.
-        </p>
-
-        <div class="gallery">
-            <img src="foto_1.JPEG" alt="Anılar">
-            <img src="foto_2.JPEG" alt="Anılar">
-            <img src="foto_3.JPEG" alt="Anılar">
-            <img src="foto_4.JPEG" alt="Anılar">
-            <img src="foto_5.JPEG" alt="Anılar">
-            <img src="foto_6.jpg" alt="Anılar">            
-            <img src="foto_7.jpg" alt="Anılar">
-            <img src="foto_8.JPEG" alt="Anılar">
-            <img src="foto_9.JPEG" alt="Anılar">
-            <img src="foto_10.JPEG" alt="Anılar">            
-            <img src="foto_11.JPEG" alt="Anılar">
-            <img src="foto_12.JPEG" alt="Anılar">   
-            <img src="foto_13.JPEG" alt="Anılar">   
-            <img src="foto_14.JPEG" alt="Anılar">                                     
-            <img src="foto_15.JPEG" alt="Anılar">  
-        </div>
-
-        <div class="video-container">
-            <h2>Ketçaplı pilav..</h2>
-            
-            <div class="video-wrapper">
-                <video controls playsinline muted>
-                    <source src="video1.mp4" type="video/mp4">
-                    Tarayıcın bu videoyu desteklemiyor.
-                </video>
-
-                <video controls playsinline muted>
-                    <source src="video2.MP4" type="video/mp4">
-                    Tarayıcın bu videoyu desteklemiyor.
-                </video>        
-            </div>
-            <p class="video-note">Videoları izlemek için üzerine tıklayabilirsin.</p>
-        </div>
-
-        <div style="text-align: center; margin-top: 80px; margin-bottom: 50px;">
-            <button class="secret-btn" onclick="openSecretLogin()">Bir gün bizi özlersen...</button>
-        </div>
-
-    </div> 
-    <div id="secret-login-screen" class="modal-overlay">
-        <div class="login-card">
-            <span class="close-modal" onclick="closeSecretLogin()">&times;</span>
-            <div class="icon-area">🔐</div>
-            <p class="subtitle">Bu kapıyı açmak için diğer şifreyi gir.</p>
-            
-            <div class="input-group">
-                <input type="password" id="secret-password" placeholder="Özel Şifre" />
-            </div>
-            
-            <button onclick="checkSecretPassword()">Kilidi Aç</button>
-            <p id="secret-error-msg" style="display:none; color:red; margin-top:10px;">Yanlış anahtar.</p>
-        </div>
-    </div>
-
-    <div id="secret-content-screen" class="modal-overlay">
-        <div class="secret-paper">
-            <span class="close-modal" onclick="closeSecretContent()">&times;</span>
-            <h2>Ben bir eşşeğim özür dilerim.</h2>
-            
-            <div class="scrollable-content">
-                <p>
-                    Yıllar sonra gerçekten sevildiğimi, doğru insanla beraber olduğumu ve yaşadığımı hissettirdiğin için binlerce kez teşekkür ederim. Hep sana layık bir sevgili olmaya çalışsam da, sen benden kat kat üstün olduğun için beceremedim; hata üstüne hata yaptım. En sonunda da beni gerçekten tüm kalbiyle sevdiğine inandığım seni, evimi kaybettim.
-                </p>
-                <p>
-                    Benim için bunları yazmak fazlasıyla can acıtıcı, bir o kadar da üzücü. Keşke her şeyin farklı olduğu bir zamanda hayatlarımızı birleştirebilseydik, keşke bu kadar aptal olmasaydım.
-                </p>
-                <p>
-                    Bana yaşattığın ilkleri hiçbir zaman unutmayacağım ve seni hep en güzel halimizle; Cıvığımızı aldığımız günkü heyecanımızla, mutfakta ensemi öpmenle, donumu indirmenle (!), Uno'da attığın +4'ler, çakma monopoly'mizde taktığın kiralarla, buz pateni için darlayıp bana yaşattığın ölüm tehlikesiyle, dans ettirmeye çalışıp başımı döndürmenle, bana hep aşkla baktığın o gözlerle hatırlayacağım.
-                </p>
-                <p>
-                    İlişkimiz keşke "iyi ki"lerden "keşke"lere dönmeseydi. Keşke hep o aşk dolu gözlerinde kaybolsaydım, saatlerce bir hayran gibi seni izleseydim. Keşke hep kucağımda huzurla uyuyup beni dünyanın en mutlu adamı yapmaya devam etseydin. Keşke aşkın affedebileceği hatalarım olsaydı... Elimizden tüm bunları aldığım için üzgünüm sevgilim, çok üzgünüm. Umarım bir gün beni affedebilirsin. Çocuklarımız sana emanet (zaten her şeylerini sen yapıyordun).
-                </p>
-                <p>
-                    Bir gün sana tekrar labneli yumurta, kuymak, menemen ve patatesli yumurta yapmak dileğimle...
-                </p>
-                <br>
-                <p style="text-align: right; font-style: italic;">
-                    Seni her zaman seven, sevecek ve bekleyecek sevgilinden, biricik sincabına.<br>
-                    <strong style="color: #ff9a9e;">07.09.2025 - ∞</strong>
-                </p>
+        <div class="hero-content">
+            <h1>Aracınız İçin <br><span class="highlight">Kusursuz Temizlik</span></h1>
+            <p>Profesyonel dokunuşlarla aracınızı showroom parlaklığına kavuşturuyoruz. Beklemek yok, karmaşa yok; sadece kusursuz detaylar.</p>
+            <div class="hero-buttons">
+                <a href="#randevu" class="btn-primary">Hemen Randevu Oluştur</a>
             </div>
         </div>
-    </div>
+    </section>
 
-    <script src="script.js"></script>
 </body>
 </html>
