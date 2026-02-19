@@ -22,4 +22,20 @@ document.addEventListener('DOMContentLoaded', () => {
         offset: 100, 
         once: true 
     });
+
+    // 3. Randevu Formu İşlemleri (Tıklandığında sayfa yenilenmesini engelleme)
+    const appointmentForm = document.getElementById('appointmentForm');
+    
+    if (appointmentForm) {
+        appointmentForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Formun sayfayı yenilemesini engeller
+            
+            // Burada ileride WhatsApp API'ye veya Mail'e veri gönderebiliriz.
+            // Şimdilik müşteriye şık bir uyarı verelim:
+            alert("Randevu talebiniz başarıyla alındı! En kısa sürede sizinle iletişime geçeceğiz.");
+            
+            // Formu temizle
+            appointmentForm.reset();
+        });
+    }
 });

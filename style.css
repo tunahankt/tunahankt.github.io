@@ -274,6 +274,7 @@ body {
     outline: none;
 }
 
+/* Tarih Seçici Takvim Rengi (Karanlık Moda Uygun) */
 .appointment-form input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
     cursor: pointer;
